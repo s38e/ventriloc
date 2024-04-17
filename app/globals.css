@@ -1,0 +1,42 @@
+:root {
+  --color-transparent: rgba(0, 0, 0, 0);
+  --color-current: currentColor;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-primary: #ff682c;
+  --color-secondary: #401d19;
+  --color-brown: #331613;
+  --color-laiton: #816729;
+  --color-blue: #1f3138;
+  --color-nude: #edd0c6;
+  --color-bordeau: #6b1e1c;
+  --color-bordeau-light: #863b32;
+  --color-bordeau-dark: #512520;
+  --color-orange: #ff682c;
+  --color-ivory: #ebe6dd;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+}
+body {
+  color: #edd0c6;
+  background: #401d19;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #863b32;
+  border-radius: 3px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
