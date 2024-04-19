@@ -1,6 +1,15 @@
 "use client";
 import styles from "../page.module.css";
 import Image from "next/image";
+import ABB_2 from "@/public/ABB_2.svg";
+import ANGELCARE_2 from "@/public/ANGELCARE_2.svg";
+import AUBAINERIE_2 from "@/public/AUBAINERIE_2.svg";
+import BROMONT_2 from "@/public/BROMONT_2.svg";
+import BRP_2 from "@/public/BRP_2.svg";
+import CASCADE_2 from "@/public/CASCADE_2.svg";
+import DOYLE_2 from "@/public/DOYLE_2.svg";
+import SOLLIO_2 from "@/public/SOLLIO_2.svg";
+import SONEPAR_2 from "@/public/SONEPAR_2.svg";
 import NavBar from "./components/NavBar";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -61,14 +70,15 @@ export default function Home() {
       },
       y: "12rem",
     });
-    // ----------- Smooth Scroll ----------- //
-    var Span_1 = document.querySelector(`.${styles.span1}`);
-    var Span_2 = document.querySelector(`.${styles.span2}`);
-
-    var WidthSpan_1 = Span_1.getBoundingClientRect().width;
-    var WidthSpan_2 = Span_2.getBoundingClientRect().width;
-  });
-  const t = useTranslations("Index");
+    // // ----------- Marquee ----------- //
+    gsap.to(`.${styles.marquee__inner}`, {
+      xPercent: -100,
+      duration: 10,
+      repeat: -1,
+      ease: "linear",
+      overwrite: "auto", // استخدام خاصية overwrite لتجنب التقطيع
+    });
+  }, []);
   return (
     <>
       <NavBar />
@@ -1164,6 +1174,127 @@ export default function Home() {
                     fill="currentColor"
                   ></path>
                 </svg>
+              </div>
+            </div>
+          </div>
+          <div className={styles.partner}>
+            <h2>Trusted partner of</h2>
+            <div className={styles.marquee}>
+              <div className={styles.marquee__inner}>
+                <div className={styles.marquee__part}>
+                  <Image src={SOLLIO_2} alt="SOLLIO" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={ABB_2} alt="ABB" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={AUBAINERIE_2} alt="AUBAINERIE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={BROMONT_2} alt="BROMONT" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={BRP_2} alt="BRP" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={DOYLE_2} alt="DOYLE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={ANGELCARE_2} alt="ANGELCARE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={CASCADE_2} alt="CASCADE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={SONEPAR_2} alt="SONEPAR" />
+                </div>
+              </div>
+              <div className={styles.marquee__inner}>
+                <div className={styles.marquee__part}>
+                  <Image src={SOLLIO_2} alt="SOLLIO" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={ABB_2} alt="ABB" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={AUBAINERIE_2} alt="AUBAINERIE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={BROMONT_2} alt="BROMONT" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={BRP_2} alt="BRP" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={DOYLE_2} alt="DOYLE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={ANGELCARE_2} alt="ANGELCARE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={CASCADE_2} alt="CASCADE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={SONEPAR_2} alt="SONEPAR" />
+                </div>
+              </div>
+              <div className={styles.marquee__inner}>
+                <div className={styles.marquee__part}>
+                  <Image src={SOLLIO_2} alt="SOLLIO" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={ABB_2} alt="ABB" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={AUBAINERIE_2} alt="AUBAINERIE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={BROMONT_2} alt="BROMONT" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={BRP_2} alt="BRP" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={DOYLE_2} alt="DOYLE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={ANGELCARE_2} alt="ANGELCARE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={CASCADE_2} alt="CASCADE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={SONEPAR_2} alt="SONEPAR" />
+                </div>
+              </div>
+              <div className={styles.marquee__inner}>
+                <div className={styles.marquee__part}>
+                  <Image src={SOLLIO_2} alt="SOLLIO" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={ABB_2} alt="ABB" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={AUBAINERIE_2} alt="AUBAINERIE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={BROMONT_2} alt="BROMONT" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={BRP_2} alt="BRP" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={DOYLE_2} alt="DOYLE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={ANGELCARE_2} alt="ANGELCARE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={CASCADE_2} alt="CASCADE" />
+                </div>
+                <div className={styles.marquee__part}>
+                  <Image src={SONEPAR_2} alt="SONEPAR" />
+                </div>
               </div>
             </div>
           </div>
