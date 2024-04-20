@@ -295,3 +295,101 @@
 .section_3 .partner .marquee .marquee__inner .marquee__part {
   /* flex-shrink: 0; */
 }
+/* ------------------- Section 4 ------------------- */
+.section_4 {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 60px;
+}
+.section_4 .BackGround {
+  position: absolute;
+  content: "";
+  background-color: #ebe6dd;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: calc(100% + 200px);
+  z-index: -1;
+  padding: 100px 0;
+  border-radius: 20px;
+}
+.section_4 h3 {
+  padding: 0 5%;
+  color: #512520;
+  text-align: center;
+  font-family: "PolySans";
+  font-weight: 300;
+  font-size: 86px;
+}
+.section_4 h3 span {
+  color: #ff682c;
+  font-family: "Ivar Display";
+}
+.section_4 .hr {
+  padding: 0 5% !important;
+  height: 1px;
+  width: calc(100% - 10%);
+  background-color: #ff682c;
+}
+.section_4 .logoImages {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 0 5%;
+}
+.section_4 .logoImages .stripe_animations {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.section_4 .logoImages .stripe_animations svg {
+  width: 100%;
+  height: auto;
+}
+.section_4 .logoImages .stripe_animations:nth-child(2),
+.section_4 .logoImages .stripe_animations:nth-child(4) {
+  margin-top: 5.5%;
+}
+.section_4 .logoImages .stripe_animations:nth-child(1) svg path,
+.section_4 .logoImages .stripe_animations:nth-child(3) svg path {
+  fill: #ff682c;
+}
+.section_4 .logoImages .stripe_animations:nth-child(2) svg path {
+  fill: #512520;
+}
+.section_4 .logoImages .stripe_animations:nth-child(4) svg path {
+  fill: #816729;
+}
+.section_4 .title {
+  padding: 0 5%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: #ff682c;
+}
+.section_4 .title .links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  text-decoration: underline;
+}
+.section_4 .title .links {
+  font-family: "PolySans";
+  font-size: 20px;
+}
+.section_4 .title .text {
+  font-size: 36px;
+  line-height: 36px;
+  text-indent: 5ch;
+  font-weight: 300;
+  font-family: "PolySans";
+}
