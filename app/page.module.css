@@ -19,6 +19,7 @@
 .section {
   padding: 0 5%;
   width: 100%;
+  padding-bottom: 150px !important;
 }
 /* ------------------- Section 1 ------------------- */
 .section_1 {
@@ -89,7 +90,6 @@
   width: 100%;
   height: 159vh;
   position: relative;
-  padding-bottom: 150px;
 }
 .section_2 svg {
   width: 100%;
@@ -296,7 +296,7 @@
   position: relative;
   width: 100%;
   padding: 0;
-  margin-bottom: 200px;
+  /* margin-bottom: 200px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -395,6 +395,7 @@
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+  gap: 15rem;
 }
 .section_5 .sticky {
   height: 150vh;
@@ -407,7 +408,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
 }
-.section_5 .sticky .cards .card {
+.section_5 .sticky .cards .cardSticky {
   overflow: hidden;
   position: relative;
   flex-grow: 1;
@@ -422,45 +423,46 @@
   gap: 3rem;
   max-width: 450px;
 }
-.section_5 .sticky .cards .card:nth-child(1) {
+.section_5 .sticky .cards .cardSticky:nth-child(1) {
   background-color: #ebd4c9;
   color: black;
 }
-.section_5 .sticky .cards .card svg path {
+.section_5 .sticky .cards .cardSticky svg path {
   fill: white;
 }
-.section_5 .sticky .cards .card:nth-child(2) {
+.section_5 .sticky .cards .cardSticky:nth-child(2) {
   background-color: #816729;
 }
-.section_5 .sticky .cards .card:nth-child(3) {
+.section_5 .sticky .cards .cardSticky:nth-child(3) {
+  z-index: -1;
   background-color: #1f3138;
 }
-.section_5 .sticky .cards .card:nth-child(4) {
+.section_5 .sticky .cards .cardSticky:nth-child(4) {
   background-color: #ff682c;
 }
-.section_5 .sticky .cards .card:nth-child(1) svg {
+.section_5 .sticky .cards .cardSticky:nth-child(1) svg {
   height: 40px;
   width: auto;
 }
-.section_5 .sticky .cards .card:nth-child(2) svg {
+.section_5 .sticky .cards .cardSticky:nth-child(2) svg {
   height: 60px;
   width: auto;
 }
-.section_5 .sticky .cards .card:nth-child(3) svg {
+.section_5 .sticky .cards .cardSticky:nth-child(3) svg {
   height: 77px;
   width: 188px;
 }
-.section_5 .sticky .cards .card:nth-child(4) svg {
+.section_5 .sticky .cards .cardSticky:nth-child(4) svg {
   position: absolute;
   top: 0;
   left: 0;
   height: auto;
   width: 93%;
 }
-.section_5 .sticky .cards .card:nth-child(4) {
+.section_5 .sticky .cards .cardSticky:nth-child(4) {
   align-items: center;
 }
-.section_5 .sticky .cards .card:nth-child(4) .btn {
+.section_5 .sticky .cards .cardSticky:nth-child(4) .btn {
   position: relative;
   z-index: 1;
   font-size: 16px;
@@ -477,7 +479,7 @@
   cursor: pointer;
   transition: 0.3s;
 }
-.section_5 .sticky .cards .card:nth-child(4) .btn::before {
+.section_5 .sticky .cards .cardSticky:nth-child(4) .btn::before {
   position: absolute;
   content: "";
   top: 100%;
@@ -490,15 +492,15 @@
   transition: 0.3s;
   border-radius: 50%;
 }
-.section_5 .sticky .cards .card:nth-child(4) .btn:hover {
+.section_5 .sticky .cards .cardSticky:nth-child(4) .btn:hover {
   color: #401d19;
   scale: 1.05;
 }
-.section_5 .sticky .cards .card:nth-child(4) .btn:hover::before {
+.section_5 .sticky .cards .cardSticky:nth-child(4) .btn:hover::before {
   border-radius: 0;
   top: 0;
 }
-.section_5 .sticky .cards .card:nth-child(4) span {
+.section_5 .sticky .cards .cardSticky:nth-child(4) span {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -510,33 +512,122 @@
   font-family: "PolySans";
   color: white;
 }
-.section_5 .sticky .cards .card:nth-child(4) svg path {
+.section_5 .sticky .cards .cardSticky:nth-child(4) svg path {
   fill: #7d6731;
 }
-.section_5 .sticky .cards .card p {
+.section_5 .sticky .cards .cardSticky p {
   font-family: "PolySans";
   font-size: 18px;
   line-height: 27px;
 }
-.section_5 .sticky .cards .card .caption {
+.section_5 .sticky .cards .cardSticky .caption {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
 }
-.section_5 .sticky .cards .card h4 {
+.section_5 .sticky .cards .cardSticky h4 {
   color: rgb(237, 208, 198);
   font-size: 28px;
   font-weight: 300;
   font-family: "PolySans";
 }
-.section_5 .sticky .cards .card .caption p:nth-child(1) {
+.section_5 .sticky .cards .cardSticky .caption p:nth-child(1) {
   font-size: 30px;
   font-weight: 300;
   font-family: "Ivar Display";
 }
-.section_5 .sticky .cards .card .caption p:nth-child(2) {
+.section_5 .sticky .cards .cardSticky .caption p:nth-child(2) {
   font-family: "PolySans";
   font-size: 14px;
   font-weight: 300;
+}
+.section_5 .faq {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+}
+.section_5 .faq .left {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 3rem;
+}
+.section_5 .faq .left h2 {
+  font-size: 40px;
+  color: rgb(237, 208, 198);
+  font-family: "PolySans";
+  font-weight: 300;
+}
+.section_5 .faq .left p {
+  font-family: "PolySans";
+  max-width: 300px;
+  font-size: 18px;
+  color: rgb(255, 104, 44);
+  font-weight: 300;
+}
+.section_5 .faq .questions {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.section_5 .faq .questions .question {
+  background-color: transparent;
+  padding: 15px 30px;
+  width: 100%;
+  border: 1px solid #863b32;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 1.5rem;
+  cursor: pointer;
+}
+.section_5 .faq .questions .question .head {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+}
+.section_5 .faq .questions .question .head svg {
+  transition: transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.section_5 .faq .questions .question .head svg path {
+  fill: rgb(237, 208, 198);
+}
+.section_5 .faq .questions .question .head:hover svg {
+  transform: rotate(180deg);
+}
+.section_5 .faq .questions .question .head p {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(237, 208, 198);
+  font-family: "PolySans";
+}
+.section_5 .faq .questions .question .answer {
+  display: none;
+  text-align: left;
+  padding-left: 39px;
+  padding-bottom: 1rem;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(237, 208, 198);
+  font-family: "PolySans";
+}
+.section_5 .faq .questions .question.active .answer {
+  display: block;
+}
+.section_5 .faq .questions .question.active .head svg path {
+  fill: #ff682c;
+}
+.section_5 .faq .questions .question.active .head svg {
+  transform: rotate(45deg);
 }

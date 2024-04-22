@@ -17,7 +17,7 @@ import { createSharedPathnamesNavigation } from "next-intl/navigation";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -114,7 +114,109 @@ export default function Home() {
         },
       }
     );
+    // ----------- Animation Card 1 Section5 ----------- //
+    gsap.fromTo(
+      `.${styles.cardSticky}:nth-child(1)`,
+      {
+        rotate: "-13deg",
+      },
+      {
+        rotate: "-4deg",
+        scrollTrigger: {
+          trigger: `.${styles.sticky}`,
+          scrub: 1,
+          // markers: true,
+          start: "top 80%",
+          end: "bottom 80%",
+        },
+      }
+    );
+    // ----------- Animation Card 2 Section5 ----------- //
+    gsap.fromTo(
+      `.${styles.cardSticky}:nth-child(2)`,
+      {
+        rotate: "-7deg",
+        x: "60%",
+      },
+      {
+        x: "-13%",
+        rotate: "10deg",
+        scrollTrigger: {
+          trigger: `.${styles.sticky}`,
+          scrub: 1,
+          // markers: true,
+          start: "top 80%",
+          end: "bottom 80%",
+        },
+      }
+    );
+    // ----------- Animation Card 3 Section5 ----------- //
+    gsap.fromTo(
+      `.${styles.cardSticky}:nth-child(3)`,
+      {
+        x: "120%",
+        rotate: "-13deg",
+      },
+      {
+        x: "-20%",
+        rotate: "-4deg",
+        scrollTrigger: {
+          trigger: `.${styles.sticky}`,
+          scrub: 1,
+          // markers: true,
+          start: "top 80%",
+          end: "bottom 80%",
+        },
+      }
+    );
+    // ----------- Animation Card 4 Section5 ----------- //
+    gsap.fromTo(
+      `.${styles.cardSticky}:nth-child(4)`,
+      {
+        rotate: "-7deg",
+        x: "180%",
+      },
+      {
+        x: "-35%",
+        rotate: "10deg",
+        scrollTrigger: {
+          trigger: `.${styles.sticky}`,
+          scrub: 1,
+          // markers: true,
+          start: "top 80%",
+          end: "bottom 80%",
+        },
+      }
+    );
   }, []);
+  const [activeIndex, setActiveIndex] = useState(null);
+  const questions = [
+    {
+      question: "Do you do organizational strategy?",
+      answer:
+        "Although we are able to fully understand a strategic plan, our expertise is focused on analytical alignment. We leave it to other management consulting firms to set up organizational strategies. However, once this strategy and the objectives are in place, we will be able to support you on an analytical level to ensure the implementation of tools and strategies to help monitor the achievement of these objectives.",
+    },
+    {
+      question: "Are you able to develop custom visuals in Power BI?",
+      answer:
+        "Absolutely! We have developed customized visuals on several occasions for partners. However, we always try to use default visuals or Microsoft-certified custom visuals to ensure optimal stability in the reports we develop.",
+    },
+    {
+      question: "Are you able to integrate directly from Power BI?",
+      answer:
+        "Yes, we regularly use Dataflows in Power BI to integrate data when it is the best option according to your needs. Moreover, our experts take great pleasure in creating advanced functions in Power Query using M language to save you a lot of time!",
+    },
+    {
+      question:
+        "Are you able to integrate data from sources outside my organization?",
+      answer:
+        "Of course. For example, our experts have worked on several projects where extracting data from different web pages was required, a process commonly called web scraping (Rest assured, we confirm it’s legal when we do it!).",
+    },
+  ];
+  const handleQuestionClick = (index) => {
+    setActiveIndex(index === activeIndex ? null : index);
+  };
+
   return (
     <>
       <NavBar />
@@ -1631,7 +1733,7 @@ export default function Home() {
         <section className={`${styles.section_5} ${styles.section}`}>
           <div className={styles.sticky}>
             <div className={styles.cards}>
-              <div className={styles.card}>
+              <div className={styles.cardSticky}>
                 <svg
                   width="63"
                   height="30"
@@ -1707,7 +1809,7 @@ export default function Home() {
                   <p>Product Marketing Director</p>
                 </div>
               </div>
-              <div className={styles.card}>
+              <div className={styles.cardSticky}>
                 <svg
                   width="30"
                   height="30"
@@ -1756,7 +1858,7 @@ export default function Home() {
                   <p>BI Team Lead</p>
                 </div>
               </div>
-              <div className={styles.card}>
+              <div className={styles.cardSticky}>
                 <svg
                   width="172"
                   height="30"
@@ -1786,7 +1888,7 @@ export default function Home() {
                   <p>Director Processes & Control</p>
                 </div>
               </div>
-              <div className={styles.card}>
+              <div className={styles.cardSticky}>
                 <svg
                   width="243"
                   height="526"
@@ -1809,7 +1911,43 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.faq}></div>
+          <div className={styles.faq}>
+            <div className={styles.left}>
+              <h2>FAQ</h2>
+              <p>
+                Here are some of our most asked questions. If yours is not
+                there, contact us.
+              </p>
+            </div>
+            <div className={styles.questions}>
+              {questions.map((item, index) => (
+                <button
+                  key={index}
+                  className={`${styles.question} ${
+                    activeIndex === index ? styles.active : ""
+                  }`}
+                  onClick={() => handleQuestionClick(index)}
+                >
+                  <div className={styles.head}>
+                    <svg
+                      width="9"
+                      height="9"
+                      viewBox="0 0 9 9"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 5.04H5.04V9H3.96V5.04H0V3.96H3.96V0H5.04V3.96H9V5.04Z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                    <p>{item.question}</p>
+                  </div>
+                  <p className={styles.answer}>{item.answer}</p>
+                </button>
+              ))}
+            </div>
+          </div>
         </section>
         <section className={`${styles.section_6} ${styles.section}`}></section>
         <section className={`${styles.section_7} ${styles.section}`}></section>
