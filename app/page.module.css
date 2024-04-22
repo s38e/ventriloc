@@ -603,7 +603,7 @@
 .section_5 .faq .questions .question .head svg path {
   fill: rgb(237, 208, 198);
 }
-.section_5 .faq .questions .question .head:hover svg {
+.section_5 .faq .questions .question:hover .head svg {
   transform: rotate(180deg);
 }
 .section_5 .faq .questions .question .head p {
@@ -616,7 +616,7 @@
   display: none;
   text-align: left;
   padding-left: 39px;
-  padding-bottom: 1rem;
+  /* padding-bottom: 1rem; */
   font-size: 18px;
   font-weight: 400;
   color: rgb(237, 208, 198);
@@ -629,5 +629,170 @@
   fill: #ff682c;
 }
 .section_5 .faq .questions .question.active .head svg {
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
+}
+/* ------------------- Section 6 ------------------- */
+.section_6 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+.section_6 .fanSvg {
+  position: absolute;
+  z-index: -1;
+  bottom: 20%;
+  width: calc(23% + 20px);
+  height: auto;
+}
+.section_6 svg path {
+  fill: #816729;
+}
+.section_6 h3 {
+  font-size: 40px;
+  font-family: "PolySans";
+  color: rgb(237, 208, 198);
+  font-weight: 300;
+}
+.section_6 h3 span {
+  color: #ff682c;
+  font-family: "Ivar Display";
+  text-decoration: underline;
+  cursor: pointer;
+}
+.section_6 .body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.section_6 .body .posts {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #816729;
+  border-radius: 20px;
+  width: 80%;
+  background-color: #401d19;
+}
+.section_6 .body .hr {
+  width: calc(100% - 80px);
+  height: 1px;
+  background-color: #816729;
+  margin: 0 40px;
+}
+.section_6 .body .posts .post {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 40px;
+  cursor: pointer;
+  gap: 2rem;
+}
+.section_6 .body .posts .post .left {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.section_6 .body .posts .post .left .date {
+  color: rgb(237, 208, 198);
+  font-size: 16px;
+  font-family: "PolySans";
+  font-weight: 300;
+}
+.section_6 .body .posts .post .left .title {
+  color: rgb(237, 208, 198);
+  font-family: "PolySans";
+  font-weight: 300;
+  font-size: 32px;
+  transition: 0.4s;
+}
+/* .section_6 .body .posts .post .right {
+} */
+.section_6 .body .posts .post .right .img {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+.section_6 .body .posts .post .right .img img {
+  width: 100%;
+  height: auto;
+  transition: 0.4s;
+  vertical-align: top;
+}
+.section_6 .body .posts .post:hover .right .img img {
+  scale: 1.1;
+}
+.section_6 .body .posts .post:hover .left .title {
+  text-decoration: underline;
+  color: #ff682c;
+}
+/* ------------------- Section 7 ------------------- */
+.section_7 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section_7 .container {
+  padding: 8% 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #816729;
+  border-radius: 20px;
+}
+.section_7 .container h3 {
+  text-align: center;
+  font-family: "PolySans";
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 300;
+}
+.section_7 .container h3 span {
+  color: #ff682c;
+  font-family: "Ivar Display";
+}
+.section_7 .container button {
+  position: relative;
+  margin-bottom: 1%;
+  font-family: "PolySans";
+  font-weight: 300;
+  font-size: 18px;
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid #863b32;
+  background-color: transparent;
+  border-radius: 10rem;
+  transition: 0.3s;
+  overflow: hidden;
+  transform: translateY(-20%);
+}
+.section_7 .container button::before {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* transform: translate(-50%, -50%); */
+  background-color: #863b32;
+  z-index: -1;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+.section_7 .container button:hover {
+  scale: 1.05;
+}
+.section_7 .container button:hover::before {
+  border-radius: 0;
+  top: 0;
 }
