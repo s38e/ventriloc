@@ -1,4 +1,15 @@
+/* ------------------- Font Face ------------------- */
+@font-face {
+  font-family: "PolySans";
+  src: url("../../../../public/fonts/PolySans.woff2");
+}
+@font-face {
+  font-family: "Ivar Display";
+  src: url("../../../../public/fonts/IvarDisplay.woff2");
+}
+/* ------------------- NavBar ------------------- */
 .NavBar {
+  font-family: "PolySans";
   display: flex;
   width: 100%;
   align-items: center;
@@ -7,6 +18,7 @@
   padding: 0 5%;
   margin-top: 20px;
   position: relative;
+  z-index: 2;
 }
 .NavBar .logo {
   display: flex;
@@ -39,6 +51,9 @@
   color: #ff682c;
   font-size: 18px;
   transition: 0.5s;
+  background-color: transparent;
+  outline: none;
+  border: none;
 }
 .NavBar .links .link:hover {
   background-color: #512520;
@@ -67,7 +82,144 @@
 .NavBar .contactButton:hover::before {
   transform: scale(1.05);
 }
-/* ========================================================================================= */
+/* ------------------- Menus ------------------- */
+.menuServices {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  visibility: hidden;
+  transition: visibility 1.2s ease; /* تحديد مدة الانتقال 0.5 ثانية */
+}
+.menuServices.active {
+  visibility: visible;
+}
+.menuServices .backSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #edd0c6;
+  width: 100%;
+  z-index: -1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0 5%;
+  transform: translateY(-100%);
+  transition: transform 1.25s 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.menuServices .backSection .figureSvg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 30%;
+  z-index: 2;
+  overflow: hidden;
+}
+.menuServices .backSection .figureSvg svg {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: -30%;
+  right: 0;
+}
+.menuServices .backSection .figureSvg svg path {
+  fill: #f6e2d8;
+}
+.menuServices.active .backSection {
+  transition: transform 1.25s cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateY(0);
+}
+.menuServices .backSection .contact {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+.menuServices .backSection .contact h3 {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 300;
+  font-family: "PolySans";
+  color: rgb(255, 104, 44);
+}
+.menuServices .backSection .contact button {
+  color: rgb(237, 208, 198);
+  background-color: rgb(255, 104, 44);
+  outline: none;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10rem;
+  font-size: 16px;
+}
+.menuServices .body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 120px 5% 50px 5%;
+  width: 100%;
+  background-color: #331613;
+  transform: translateY(calc(-100% - 80px));
+  transition: transform 1.25s 0s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.menuServices.active .body {
+  transition: transform 1.25s 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateY(0);
+}
+.menuServices .body .card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  border: 1px solid #863b32;
+  padding: 34px;
+  border-radius: 12px;
+  max-height: 580px;
+  height: 580px;
+}
+.menuServices .body .card .headText {
+  width: 100%;
+  font-size: 40px;
+  color: rgb(237, 208, 198);
+  font-family: "PolySans";
+  font-weight: 300;
+}
+.menuServices .body .card .headText span {
+  font-family: "Ivar Display";
+  font-size: 42.56px;
+}
+.menuServices .body .card:nth-child(2) .headText {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.menuServices .body .card:nth-child(2) .headText span:nth-child(1) {
+  font-family: "PolySans";
+}
+.menuServices .body .card:nth-child(2) .headText span:nth-child(1) span {
+  font-family: "Ivar Display";
+}
+.menuServices .body .card:nth-child(2) .headText span:nth-child(2) {
+  font-family: "PolySans";
+  color: rgb(255, 104, 44);
+  font-size: 16px;
+}
+.menuServices .body .card img {
+  width: 100%;
+  height: auto;
+}
+/* .menuVentriloc,
+.menuContact */
+/* ------------------- Responsive ------------------- */
 @media (min-width: 768px) {
   .NavBar .logo svg {
     width: 188px;

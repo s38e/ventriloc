@@ -1,5 +1,6 @@
 "use client";
 import styles from "../page.module.css";
+import stylesNavBar from "./components/styles/NavBar.module.css";
 import Image from "next/image";
 import MicrosoftTeamsImage4 from "@/public/MicrosoftTeams-image-4.png";
 import PowerBIReport from "@/public/Power-BI-report.webp";
@@ -18,10 +19,11 @@ import { getTranslations } from "next-intl/server";
 import { createSharedPathnamesNavigation } from "next-intl/navigation";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import CustomEase from "gsap/CustomEase";
 import Lenis from "@studio-freight/lenis";
 import { useEffect, useState } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, CustomEase);
 
 const locales = ["en", "fr"];
 const { Link, useRouter, usePathname, redirect } =
@@ -36,6 +38,378 @@ const { Link, useRouter, usePathname, redirect } =
 
 export default function Home() {
   useEffect(() => {
+    // ----------- NavBar Animation ----------- //
+    gsap.fromTo(
+      `.${stylesNavBar.NavBar}`,
+      {
+        y: -50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        delay: 0.5,
+        duration: 0.8,
+      }
+    );
+    // ----------- Section 1 Animation ----------- //
+    gsap.fromTo(
+      `.${styles.spanHeadSection_1}:nth-child(1)`,
+      {
+        y: "50%",
+        opacity: 0,
+      },
+      {
+        y: "0%",
+        opacity: 1,
+        delay: 0.8,
+        duration: 0.8,
+      }
+    );
+    gsap.fromTo(
+      `.${styles.spanHeadSection_1}:nth-child(2)`,
+      {
+        y: "50%",
+        opacity: 0,
+      },
+      {
+        y: "0%",
+        opacity: 1,
+        delay: 1,
+        duration: 0.8,
+      }
+    );
+    gsap.fromTo(
+      `.${styles.btn}`,
+      {
+        y: "80%",
+        opacity: 0,
+      },
+      {
+        y: "0%",
+        opacity: 1,
+        delay: 1.2,
+        duration: 0.8,
+      }
+    );
+    // ----------- Section 2 Animation ----------- //
+    gsap.fromTo(
+      `#${styles.textSection_2}`,
+      {
+        y: "50%",
+        opacity: 0,
+      },
+      {
+        y: "0%",
+        opacity: 1,
+        delay: 1.4,
+        duration: 0.8,
+      }
+    );
+    gsap.fromTo(
+      `.${styles.video}`,
+      {
+        y: 100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        delay: 1.6,
+        duration: 0.8,
+      }
+    );
+    gsap.fromTo(
+      `.${styles.section_2} svg:nth-child(2)`,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        delay: 0,
+        duration: 0.8,
+      }
+    );
+    gsap.fromTo(
+      `.${styles.section_2} svg:nth-child(3)`,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        delay: 0.2,
+        duration: 0.8,
+      }
+    );
+    // ----------- Section 3 Animation ----------- //
+    gsap.fromTo(
+      `.${styles.head} h2 span:nth-child(1)`,
+      {
+        x: "-100%",
+        opacity: 0,
+      },
+      {
+        scrollTrigger: {
+          trigger: `.${styles.section_3} .${styles.head}`,
+        },
+        x: "-40%",
+        opacity: 1,
+        duration: 1,
+      }
+    );
+    gsap.fromTo(
+      `.${styles.head} h2 span:nth-child(2)`,
+      {
+        x: "100%",
+        opacity: 0,
+      },
+      {
+        scrollTrigger: {
+          trigger: `.${styles.section_3} .${styles.head}`,
+        },
+        x: "40%",
+        opacity: 1,
+        duration: 1,
+      }
+    );
+    gsap.fromTo(
+      `.${styles.head} h2 svg`,
+      {
+        opacity: 0,
+      },
+      {
+        scrollTrigger: {
+          trigger: `.${styles.section_3} .${styles.head}`,
+        },
+        opacity: 1,
+        delay: 0.8,
+        duration: 1,
+      }
+    );
+    //
+    gsap.fromTo(
+      `.${styles.body} .${styles.card}:nth-child(1)`,
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        scrollTrigger: {
+          trigger: `.${styles.section_3} .${styles.body}`,
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+      }
+    );
+    gsap.fromTo(
+      `.${styles.body} .${styles.card}:nth-child(2)`,
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        scrollTrigger: {
+          trigger: `.${styles.section_3} .${styles.body}`,
+        },
+        y: 0,
+        opacity: 1,
+        delay: 0.2,
+        duration: 0.5,
+      }
+    );
+    gsap.fromTo(
+      `.${styles.body} .${styles.card}:nth-child(3)`,
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        scrollTrigger: {
+          trigger: `.${styles.section_3} .${styles.body}`,
+        },
+        y: 0,
+        opacity: 1,
+        delay: 0.4,
+        duration: 0.5,
+      }
+    );
+    gsap.fromTo(
+      `.${styles.section_3} .${styles.head} p`,
+      {
+        x: 150,
+        opacity: 0,
+      },
+      {
+        scrollTrigger: {
+          trigger: `.${styles.section_3}`,
+        },
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+      }
+    );
+    gsap.fromTo(
+      `.${styles.partner} h2`,
+      {
+        x: 150,
+        opacity: 0,
+      },
+      {
+        scrollTrigger: {
+          trigger: `.${styles.partner}`,
+        },
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+      }
+    );
+    gsap.fromTo(
+      `.${styles.partner} .${styles.marquee}:nth-child(2) .${styles.marquee__inner}`,
+      {
+        opacity: 0,
+      },
+      {
+        scrollTrigger: {
+          trigger: `.${styles.partner}`,
+        },
+        opacity: 1,
+        duration: 1.5,
+      }
+    );
+    gsap.fromTo(
+      `.${styles.partner} .${styles.marquee}:nth-child(3) .${styles.marquee__inner}`,
+      {
+        opacity: 0,
+      },
+      {
+        scrollTrigger: {
+          trigger: `.${styles.partner}`,
+        },
+        opacity: 1,
+        duration: 1.5,
+      }
+    );
+    // ----------- Section 4 Animation ----------- //
+    gsap.fromTo(
+      `.${styles.stripe_animations}:nth-child(1) svg path`,
+      {
+        y: "101%",
+      },
+      {
+        y: "0%",
+        ease: CustomEase.create("custom", "M0,0,C0.215,0.61,0.355,1,1,1"),
+        scrollTrigger: {
+          trigger: `.${styles.section_4}`,
+        },
+      }
+    );
+    gsap.fromTo(
+      `.${styles.stripe_animations}:nth-child(2) svg path`,
+      {
+        y: "101%",
+      },
+      {
+        y: "0%",
+        delay: 0.1,
+        ease: CustomEase.create("custom", "M0,0,C0.215,0.61,0.355,1,1,1"),
+        scrollTrigger: {
+          trigger: `.${styles.section_4}`,
+        },
+      }
+    );
+    gsap.fromTo(
+      `.${styles.stripe_animations}:nth-child(3) svg path`,
+      {
+        y: "101%",
+      },
+      {
+        y: "0%",
+        delay: 0.2,
+        ease: CustomEase.create("custom", "M0,0,C0.215,0.61,0.355,1,1,1"),
+        scrollTrigger: {
+          trigger: `.${styles.section_4}`,
+        },
+      }
+    );
+    gsap.fromTo(
+      `.${styles.stripe_animations}:nth-child(4) svg path`,
+      {
+        y: "101%",
+      },
+      {
+        y: "0%",
+        delay: 0.3,
+        ease: CustomEase.create("custom", "M0,0,C0.215,0.61,0.355,1,1,1"),
+        scrollTrigger: {
+          trigger: `.${styles.section_4}`,
+        },
+      }
+    );
+    gsap.fromTo(
+      `.${styles.spanSection_4}:nth-child(1)`,
+      {
+        opacity: 0,
+        x: 200,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        delay: 0.3,
+        ease: CustomEase.create("custom", "M0,0,C0.215,0.61,0.355,1,1,1"),
+        scrollTrigger: {
+          trigger: `.${styles.section_4} h3`,
+        },
+      }
+    );
+    gsap.fromTo(
+      `.${styles.spanSection_4}:nth-child(2)`,
+      {
+        opacity: 0,
+        x: -200,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        delay: 0.3,
+        ease: CustomEase.create("custom", "M0,0,C0.215,0.61,0.355,1,1,1"),
+        scrollTrigger: {
+          trigger: `.${styles.section_4} h3`,
+        },
+      }
+    );
+    gsap.fromTo(
+      `.${styles.section_4} .${styles.hr} div`,
+      {
+        opacity: 0,
+        transform: "scale3d(0, 1, 1)",
+      },
+      {
+        transform: "scale3d(1, 1, 1)",
+        opacity: 1,
+        duration: 1.5,
+        delay: 0.6,
+        // ease: "cubic-bezier(0.645, 0.045, 0.355, 1)",
+        ease: CustomEase.create("custom", "M0,0,C0.645,0.045,0.355,1,1,1"),
+        scrollTrigger: {
+          trigger: `.${styles.section_4} .${styles.hr}`,
+        },
+      }
+    );
+    gsap.fromTo(
+      `.${styles.section_4} .${styles.title}`,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: 0.9,
+        scrollTrigger: {
+          trigger: `.${styles.section_4} .${styles.title}`,
+        },
+      }
+    );
     // ----------- Smooth Scroll ----------- //
     const lenis = new Lenis({
       duration: 1.2,
@@ -236,10 +610,13 @@ export default function Home() {
         <section className={`${styles.section_1} ${styles.section}`}>
           <div className={styles.head}>
             <h1>
-              <span>Together</span>, we
-              <br />
-              turn <span>data</span> into
-              <span> value</span>.
+              <span className={styles.spanHeadSection_1}>
+                <span>Together</span>, we
+              </span>
+              <span className={styles.spanHeadSection_1}>
+                turn <span>data</span> into
+                <span> value</span>.
+              </span>
             </h1>
             <Link href="" className={styles.btn}>
               <p>Let’s work together</p>
@@ -261,7 +638,7 @@ export default function Home() {
         </section>
         <section className={`${styles.section_2} ${styles.section}`}>
           <div className={styles.body}>
-            <p className={styles.text}>
+            <p className={styles.text} id={styles.textSection_2}>
               Ventriloc develops innovative data
               <br />
               solutions for humans in charge of
@@ -1724,11 +2101,16 @@ export default function Home() {
             </div>
           </div>
           <h3>
-            We are <span>humans</span>
-            <br />
-            collaborating with <span>humans</span>
+            <span className={styles.spanSection_4}>
+              We are <span>humans</span>
+            </span>
+            <span className={styles.spanSection_4}>
+              collaborating with <span>humans</span>
+            </span>
           </h3>
-          <div className={styles.hr}></div>
+          <div className={styles.hr}>
+            <div></div>
+          </div>
           <div className={styles.title}>
             <div className={styles.links}>
               <Link href="">As a team, we push boundaries.</Link>

@@ -44,12 +44,15 @@
   text-align: center;
   font-weight: 300;
 }
-.section_1 .head h1 span {
+.section_1 .head h1 .spanHeadSection_1 {
+  display: block;
+}
+.section_1 .head h1 span span {
   font-size: 100px;
   font-family: "Ivar Display";
   color: #ff682c;
 }
-.section_1 .head h1 span:nth-child(3) {
+.section_1 .head h1 span:nth-child(2) span:nth-child(1) {
   font-family: "Ivar Display";
   color: #edd0c6;
 }
@@ -122,6 +125,7 @@
   top: 0;
   left: 0;
 }
+.section_2 .body #textSection_2,
 .section_2 .body .text {
   margin-top: 10rem;
   color: #ff682c;
@@ -147,7 +151,7 @@
   width: 550px;
   height: auto;
   border: 1px solid #ff682c;
-  border-radius: 30px;
+  border-radius: 25px;
 }
 /* ------------------- Section 3 ------------------- */
 /* .section_3 {
@@ -324,15 +328,31 @@
   font-weight: 300;
   font-size: 86px;
 }
-.section_4 h3 span {
+.section_4 h3 .spanSection_4 {
+  display: block;
+  /* background-color: red; */
+  line-height: 86px;
+}
+.section_4 h3 span span {
   color: #ff682c;
   font-family: "Ivar Display";
 }
 .section_4 .hr {
+  position: relative;
   padding: 0 5% !important;
   height: 1px;
+  overflow: hidden;
   width: calc(100% - 10%);
+}
+.section_4 .hr div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
   background-color: #ff682c;
+  transform-origin: left center;
+  /* transition: 1.5s 0.6s cubic-bezier(0.645, 0.045, 0.355, 1); */
 }
 .section_4 .logoImages {
   width: 100%;
