@@ -1,6 +1,7 @@
 "use client";
 import styles from "../page.module.css";
 import stylesNavBar from "./components/styles/NavBar.module.css";
+import stylesFooter from "./components/styles/Footer.module.css";
 import Image from "next/image";
 import MicrosoftTeamsImage4 from "@/public/MicrosoftTeams-image-4.png";
 import PowerBIReport from "@/public/Power-BI-report.webp";
@@ -22,6 +23,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import CustomEase from "gsap/CustomEase";
 import Lenis from "@studio-freight/lenis";
 import { useEffect, useState } from "react";
+import Footer from "./components/Footer";
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 
@@ -573,6 +575,12 @@ export default function Home() {
         // markers: true,
       },
     });
+    // ------------------- Height Section 8 ------------------- //
+    // var menuServices = document.querySelector(`.${stylesFooter.page}`);
+    // var backSection = document.querySelector(`.${styles.section_8}`);
+
+    // var heightMenuServices = menuServices.offsetHeight;
+    // backSection.style.height = heightMenuServices + "px";
   }, []);
   // ----------- handleQuestionClick ----------- //
   const [activeIndex, setActiveIndex] = useState(null);
@@ -595,8 +603,14 @@ export default function Home() {
     {
       question:
         "Are you able to integrate data from sources outside my organization?",
-      answer:
-        "Of course. For example, our experts have worked on several projects where extracting data from different web pages was required, a process commonly called web scraping (Rest assured, we confirm it’s legal when we do it!).",
+      answer: (
+        <>
+          Of course. For example, our experts have worked on several projects
+          where extracting data from different web pages was required, a process
+          commonly called web scraping (Rest assured, we confirm it&apos;s legal
+          when we do it!).
+        </>
+      ),
     },
   ];
   const handleQuestionClick = (index) => {
@@ -606,7 +620,7 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <page className={styles.page}>
+      <main className={styles.page}>
         <section className={`${styles.section_1} ${styles.section}`}>
           <div className={styles.head}>
             <h1>
@@ -619,7 +633,7 @@ export default function Home() {
               </span>
             </h1>
             <Link href="" className={styles.btn}>
-              <p>Let’s work together</p>
+              <p>Let&apos;s work together</p>
               <svg
                 width="243"
                 height="526"
@@ -2296,7 +2310,7 @@ export default function Home() {
                   ></path>
                 </svg>
                 <span>
-                  Let’s
+                  Let&apos;s
                   <br />
                   connect
                 </span>
@@ -2414,7 +2428,9 @@ export default function Home() {
             </h3>
           </div>
         </section>
-      </page>
+        {/* <section className={styles.section_8}></section> */}
+      </main>
+      <Footer />
     </>
   );
 }

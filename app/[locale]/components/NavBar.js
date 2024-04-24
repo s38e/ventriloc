@@ -15,14 +15,36 @@ function NavBar() {
   const t = useTranslations("NavBar");
   useEffect(() => {
     // ------------------- heightMenuServices ------------------- //
-    var menuServices = document.querySelector(`.${styles.menuServices}`);
+    var menuServices = document.querySelector(
+      `.${styles.menuServices} .${styles.body}`
+    );
     var backSection = document.querySelector(`.${styles.backSection}`);
 
     var heightMenuServices = menuServices.offsetHeight;
     backSection.style.height = 80 + heightMenuServices + "px";
   });
   // ------------------- State MenuServices ------------------- //
-  const [menuActive, setMenuActive] = useState(false);
+  const [menuServicesActive, setMenuServices] = useState(false);
+  // ------------------- State MenuVentriloc ------------------- //
+  const [menuVentrilocActive, setMenuVentriloc] = useState(false);
+  // ------------------- State MenuContact ------------------- //
+  const [menuContactActive, setMenuContact] = useState(false);
+  // تعيين دالة تفعيل العناصر الأخرى عند تفعيل عنصر جديد
+  const activateMenu = (menu) => {
+    if (menu === "menuServices") {
+      setMenuServices(!menuServicesActive); // تغيير حالة القائمة إلى الحالة المعاكسة
+      setMenuVentriloc(false); // إغلاق القوائم الأخرى
+      setMenuContact(false);
+    } else if (menu === "menuVentriloc") {
+      setMenuVentriloc(!menuVentrilocActive); // تغيير حالة القائمة إلى الحالة المعاكسة
+      setMenuServices(false); // إغلاق القوائم الأخرى
+      setMenuContact(false);
+    } else if (menu === "menuContact") {
+      setMenuContact(!menuContactActive); // تغيير حالة القائمة إلى الحالة المعاكسة
+      setMenuServices(false); // إغلاق القوائم الأخرى
+      setMenuVentriloc(false);
+    }
+  };
   return (
     <>
       <nav className={styles.NavBar}>
@@ -80,8 +102,10 @@ function NavBar() {
         </div>
         <div className={styles.links}>
           <button
-            className={styles.link}
-            onClick={() => setMenuActive(!menuActive)}
+            className={`${styles.link} ${
+              menuServicesActive ? `${styles.active}` : ""
+            }`}
+            onClick={() => activateMenu("menuServices")}
           >
             services
             <svg
@@ -94,7 +118,12 @@ function NavBar() {
               <path d="M1 1L5 5L9 1" stroke="currentColor"></path>
             </svg>
           </button>
-          <Link href="" className={styles.link}>
+          <button
+            className={`${styles.link} ${
+              menuVentrilocActive ? `${styles.active}` : ""
+            }`}
+            onClick={() => activateMenu("menuVentriloc")}
+          >
             ventriloc
             <svg
               width="10"
@@ -105,21 +134,27 @@ function NavBar() {
             >
               <path d="M1 1L5 5L9 1" stroke="currentColor"></path>
             </svg>
-          </Link>
-          <Link href="" className={styles.link}>
+          </button>
+          <Link className={styles.link} href="">
             contact
           </Link>
           <Link href="/" className={styles.link} locale="fr">
             fr
           </Link>
         </div>
-        <Link href="" className={styles.contactButton}>
-          Contact us
-        </Link>
+        <button
+          className={`${styles.contactButton} ${
+            menuContactActive ? `${styles.active}` : ""
+          }`}
+          onClick={() => activateMenu("menuContact")}
+        >
+          <span>Contact us</span>
+          <span>Close</span>
+        </button>
       </nav>
       <menu
         className={`${styles.menuServices} ${
-          menuActive ? `${styles.active}` : ""
+          menuServicesActive ? `${styles.active}` : ""
         }`}
       >
         <div className={styles.backSection}>
@@ -167,8 +202,78 @@ function NavBar() {
           </div>
         </div>
       </menu>
-      <menu className={styles.menuVentriloc}></menu>
-      <menu className={styles.menuContact}></menu>
+      <menu
+        className={`${styles.menuVentriloc} ${
+          menuVentrilocActive ? `${styles.active}` : ""
+        }`}
+      >
+        <div className={styles.body}>
+          <div className={styles.links}>
+            <Link href="" className={styles.link}>
+              <span>About</span>
+            </Link>
+            <Link href="" className={styles.link}>
+              <span>Clients</span>
+            </Link>
+            <Link href="" className={styles.link}>
+              <span>Team</span>
+            </Link>
+            <Link href="" className={styles.link}>
+              <span>Careers</span>
+            </Link>
+            <Link href="" className={styles.link}>
+              <span>Blog</span>
+            </Link>
+          </div>
+        </div>
+      </menu>
+      <menu
+        className={`${styles.menuContact} ${
+          menuContactActive ? `${styles.active}` : ""
+        }`}
+      >
+        <div className={styles.body}>
+          <div className={styles.head}>
+            <div className={styles.left}>
+              <p>Contact form</p>
+              <p>
+                Every good partnership starts with coffee.
+                <br /> Now let's make an appointment.
+              </p>
+            </div>
+            <div className={styles.right}>
+              <Link
+                className={styles.link}
+                href="https://www.linkedin.com/company/ventriloc"
+              >
+                LinkedIn
+              </Link>
+              <Link className={styles.link} href="mailto:info@ventriloc.ca">
+                info@ventriloc.ca
+              </Link>
+              <Link className={styles.link} href="tel:18193453223">
+                819-345-3223
+              </Link>
+            </div>
+          </div>
+          <form className={styles.form}>
+            <div className={styles.top}>
+              <div className={styles.left}>
+                <input type="text" placeholder="Name*" />
+                <input type="email" placeholder="E-mail" />
+                <input type="text" placeholder="Company" />
+              </div>
+              <div className={styles.right}>
+                <input type="text" placeholder="First name*" />
+                <input type="tel" placeholder="Phone" aria-invalid="false" />
+                <input type="text" placeholder="I am looking for help for *" />
+              </div>
+            </div>
+            <input type="text" placeholder="Message" />
+            <button className={styles.btn}>Send</button>
+          </form>
+        </div>
+      </menu>
     </>
   );
 }

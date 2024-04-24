@@ -1,0 +1,16 @@
+.page {
+  background-color: #512520;
+  padding: 3rem 5%;
+  color: #ff682c;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* z-index: -2; */
+}
+.page svg path {
+  fill: #ff682c;
+}
