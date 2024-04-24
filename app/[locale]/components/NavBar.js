@@ -174,7 +174,7 @@ function NavBar() {
           </figure>
           <div></div>
           <div className={styles.contact}>
-            <h3>Let's work together</h3>
+            <h3>Let&apos;s work together</h3>
             <button>Make an appointment</button>
           </div>
         </div>
@@ -238,7 +238,7 @@ function NavBar() {
               <p>Contact form</p>
               <p>
                 Every good partnership starts with coffee.
-                <br /> Now let's make an appointment.
+                <br /> Now lets make an appointment.
               </p>
             </div>
             <div className={styles.right}>
