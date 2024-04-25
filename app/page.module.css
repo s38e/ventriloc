@@ -185,7 +185,7 @@
 }
 .section_3 .head h2 svg {
   position: absolute;
-  top: 32%;
+  top: 0.5em;
   z-index: -1;
   opacity: 0.4;
   max-width: 100%;
@@ -428,7 +428,6 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 15rem;
-  overflow-y: hidden;
 }
 .section_5 .sticky {
   height: 150vh;
