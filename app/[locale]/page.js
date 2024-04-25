@@ -4,6 +4,7 @@ import stylesNavBar from "./components/styles/NavBar.module.css";
 import stylesFooter from "./components/styles/Footer.module.css";
 import Image from "next/image";
 import MicrosoftTeamsImage4 from "@/public/MicrosoftTeams-image-4.png";
+import ScreenFromPage from "@/public/ScreenFromPage.svg";
 import PowerBIReport from "@/public/Power-BI-report.webp";
 import ABB_2 from "@/public/ABB_2.svg";
 import ANGELCARE_2 from "@/public/ANGELCARE_2.svg";
@@ -156,7 +157,8 @@ export default function Home() {
         },
         x: "-40%",
         opacity: 1,
-        duration: 1,
+        ease: CustomEase.create("custom", "M0,0,C0.215,0.61,0.355,1,1,1"),
+        duration: 0.8,
       }
     );
     gsap.fromTo(
@@ -171,7 +173,8 @@ export default function Home() {
         },
         x: "40%",
         opacity: 1,
-        duration: 1,
+        ease: CustomEase.create("custom", "M0,0,C0.215,0.61,0.355,1,1,1"),
+        duration: 0.8,
       }
     );
     gsap.fromTo(
@@ -184,11 +187,10 @@ export default function Home() {
           trigger: `.${styles.section_3} .${styles.head}`,
         },
         opacity: 1,
-        delay: 0.8,
+        delay: 0.4,
         duration: 1,
       }
     );
-    //
     gsap.fromTo(
       `.${styles.body} .${styles.card}:nth-child(1)`,
       {
@@ -389,8 +391,8 @@ export default function Home() {
       {
         transform: "scale3d(1, 1, 1)",
         opacity: 1,
-        duration: 1.5,
-        delay: 0.6,
+        duration: 1,
+        delay: 0,
         // ease: "cubic-bezier(0.645, 0.045, 0.355, 1)",
         ease: CustomEase.create("custom", "M0,0,C0.645,0.045,0.355,1,1,1"),
         scrollTrigger: {
@@ -406,9 +408,135 @@ export default function Home() {
       {
         opacity: 1,
         duration: 1,
-        delay: 0.9,
+        delay: 0.3,
         scrollTrigger: {
           trigger: `.${styles.section_4} .${styles.title}`,
+        },
+      }
+    );
+    // ----------- Section 5 Animation ----------- //
+    gsap.fromTo(
+      `.${styles.faq} .${styles.left}`,
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.3,
+        scrollTrigger: {
+          trigger: `.${styles.faq}`,
+        },
+      }
+    );
+    gsap.fromTo(
+      `.${styles.questions} .${styles.question}:nth-child(1)`,
+      {
+        opacity: 0,
+        x: 100,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        delay: 0.6,
+        scrollTrigger: {
+          trigger: `.${styles.faq}`,
+        },
+      }
+    );
+    gsap.fromTo(
+      `.${styles.questions} .${styles.question}:nth-child(2)`,
+      {
+        opacity: 0,
+        x: 100,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        delay: 0.7,
+        scrollTrigger: {
+          trigger: `.${styles.faq}`,
+        },
+      }
+    );
+    gsap.fromTo(
+      `.${styles.questions} .${styles.question}:nth-child(3)`,
+      {
+        opacity: 0,
+        x: 100,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        delay: 0.8,
+        scrollTrigger: {
+          trigger: `.${styles.faq}`,
+        },
+      }
+    );
+    gsap.fromTo(
+      `.${styles.questions} .${styles.question}:nth-child(4)`,
+      {
+        opacity: 0,
+        x: 100,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        delay: 0.9,
+        scrollTrigger: {
+          trigger: `.${styles.faq}`,
+        },
+      }
+    );
+    // ----------- Section 6 Animation ----------- //
+    gsap.fromTo(
+      `.${styles.section_6} #${styles.h3Section6}`,
+      {
+        opacity: 0,
+        x: 200,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: `.${styles.section_6}`,
+        },
+      }
+    );
+    gsap.fromTo(
+      `.${styles.section_6} svg`,
+      {
+        opacity: 0,
+        x: 200,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: `.${styles.section_6}`,
+        },
+      }
+    );
+    gsap.fromTo(
+      `.${styles.section_6} .${styles.body} .${styles.posts}`,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        delay: 0.2,
+        duration: 1,
+        scrollTrigger: {
+          trigger: `.${styles.section_6}`,
         },
       }
     );
@@ -660,7 +788,9 @@ export default function Home() {
               making informed decisions.
             </p>
             <div className={styles.video}>
-              <div className={styles.vid}></div>
+              <div className={styles.vid}>
+                <Image src={ScreenFromPage} alt="ScreenFromPage" />
+              </div>
             </div>
           </div>
           <svg
@@ -1493,7 +1623,6 @@ export default function Home() {
                     </g>
                   </g>
                   <g
-                    // style="display: none;"
                     transform="matrix(-0.8524900078773499,-0.5227435231208801,0.5227435231208801,-0.8524900078773499,200.16799926757812,149.5)"
                     opacity="0.41200000013903804"
                   >
@@ -1514,7 +1643,6 @@ export default function Home() {
                     </g>
                   </g>
                   <g
-                    // style="display: none;"
                     transform="matrix(0.9997183084487915,0.023733602836728096,-0.023733602836728096,0.9997183084487915,200,149.5)"
                     opacity="0.41399999987112324"
                   >
@@ -2373,7 +2501,7 @@ export default function Home() {
               fill="currentColor"
             ></path>
           </svg>
-          <h3>
+          <h3 id={styles.h3Section6}>
             We like to read between the lines.
             <br />
             Read more on <span>our blog</span>
@@ -2428,7 +2556,6 @@ export default function Home() {
             </h3>
           </div>
         </section>
-        {/* <section className={styles.section_8}></section> */}
       </main>
       <Footer />
     </>
