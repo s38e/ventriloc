@@ -553,18 +553,20 @@ export default function Home() {
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
     });
-    // ----------- Smooth Scroll ----------- //
-    gsap.to(`.${styles.vid}`, {
-      // scale: 1.3,
-      scrollTrigger: {
-        trigger: `.${styles.section_2}`,
-        start: "top 33%",
-        end: "bottom bottom",
-        scrub: true,
-        // markers: true,
-      },
-      width: "1000px",
-    });
+    // ----------- Scale Video ----------- //
+    if (window.innerWidth >= 1024) {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.to(`.${styles.vid}`, {
+        width: "1000px",
+        scrollTrigger: {
+          trigger: `.${styles.section_2}`,
+          start: "top 33%",
+          end: "bottom bottom",
+          scrub: true,
+          // markers: true,
+        },
+      });
+    }
     // ----------- Smooth Scroll ----------- //
     gsap.to(`.page_section_2__0PJYq svg:nth-child(2)`, {
       scrollTrigger: {

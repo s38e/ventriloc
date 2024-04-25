@@ -42,8 +42,8 @@
 .section_1 .head h1 {
   font-family: "PolySans";
   color: #edd0c6;
-  line-height: 0.89583;
-  font-size: 102.144px;
+  line-height: min(6.66667vw, 96px);
+  font-size: min(6.66667vw, 96px);
   text-align: center;
   font-weight: 300;
 }
@@ -51,7 +51,7 @@
   display: block;
 }
 .section_1 .head h1 span span {
-  font-size: 100px;
+  font-size: min(6.66667vw, 96px);
   font-family: "Ivar Display";
   color: #ff682c;
 }
@@ -133,6 +133,8 @@
   margin-top: 10rem;
   color: #ff682c;
   font-size: 18px;
+  position: relative;
+  z-index: -1;
 }
 .section_2 .body .video {
   position: absolute;
@@ -155,6 +157,7 @@
   height: auto;
   border: 1px solid #ff682c;
   border-radius: 25px;
+  background-color: #401d19;
 }
 .section_2 .body .video .vid img {
   width: 100%;
@@ -178,18 +181,19 @@
   flex-direction: column;
   position: relative;
   margin-bottom: 140px;
+  font-size: min(5.97222vw, 86px);
 }
 .section_3 .head h2 svg {
   position: absolute;
   top: 32%;
   z-index: -1;
   opacity: 0.4;
+  max-width: 100%;
 }
 .section_3 .head h2 span {
   /* align-self: stretch; */
-  font-size: 86px;
   background-color: #401d19;
-  line-height: 86px;
+  line-height: min(5.97222vw, 86px);
 }
 .section_3 .head h2 .span1,
 .section_3 .head h2 span:nth-child(1) {
@@ -424,6 +428,7 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 15rem;
+  overflow-y: hidden;
 }
 .section_5 .sticky {
   height: 150vh;
@@ -824,4 +829,26 @@
 .section_7 .container button:hover::before {
   border-radius: 0;
   top: 0;
+}
+/* ------------------- Responsive Design ------------------- */
+/* ------------------- 1024px ------------------- */
+@media (max-width: 1024px) {
+  .section_2 {
+    height: auto !important;
+  }
+  .section_2 .body {
+    padding: 0 !important;
+    position: unset !important;
+  }
+  .section_2 .body .video {
+    transform: translateX(0);
+    position: unset !important;
+  }
+  .section_2 .body .video .vid {
+    position: unset !important;
+    width: 100% !important;
+  }
+  .section_2 .body .text {
+    margin-top: 0 !important;
+  }
 }
