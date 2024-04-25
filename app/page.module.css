@@ -448,7 +448,7 @@
   /* height: fit-content; */
   padding: 52px 46px 48px 46px;
   border-radius: 30px;
-  gap: 3rem;
+  gap: 1.5rem;
   max-width: 450px;
 }
 .section_5 .sticky .cards .cardSticky:nth-child(1) {
