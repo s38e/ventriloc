@@ -202,6 +202,7 @@
   width: 100%;
   height: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 .menuHamburger .option_1 .body {
@@ -210,9 +211,66 @@
   padding: 120px 5% 50px 5%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   gap: 1rem;
+  position: relative;
+  min-height: 560px;
+  transform: translateY(-101%);
+  transition: transform 550ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.menuHamburger.active .option_1 .body {
+  transform: translateY(0);
+  transition: transform 850ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.menuHamburger .option_1 .body .contact {
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 0 5%;
+}
+
+.menuHamburger .option_1 .body .contact h3 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 300;
+  font-family: "PolySans";
+  color: rgb(255, 104, 44);
+}
+
+.menuHamburger .option_1 .body .contact button {
+  position: relative;
+  color: rgb(237, 208, 198);
+  outline: none;
+  border: none;
+  font-family: "PolySans";
+  padding: 12px 20px;
+  background-color: transparent;
+  font-size: 16px;
+  z-index: 1;
+}
+
+.menuHamburger .option_1 .body .contact button::before {
+  background-color: rgb(255, 104, 44);
+  border-radius: 10rem;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  transition: scale 450ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.menuHamburger .option_1 .body .contact button:hover::before {
+  scale: 1.05;
 }
 
 .menuHamburger .option_1 .body .btn {
@@ -226,6 +284,25 @@
   font-size: 20px;
   color: rgb(237, 208, 198);
   font-family: "PolySans";
+  transform: translateY(-60px);
+  opacity: 0;
+  transition: transform 0.3s linear, opacity 250ms linear;
+}
+.menuHamburger.active .option_1 .body .btn {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* .menuHamburger .option_1 .body .btn:nth-child(1) {
+}
+.menuHamburger .option_1 .body .btn:nth-child(2) {
+} */
+.menuHamburger.active .option_1 .body .btn:nth-child(3) {
+  transition: transform 650ms 150ms cubic-bezier(0.215, 0.61, 0.355, 1),
+    opacity 350ms 150ms linear;
+}
+.menuHamburger.active .option_1 .body .btn:nth-child(4) {
+  transition: transform 650ms cubic-bezier(0.215, 0.61, 0.355, 1),
+    opacity 350ms linear;
 }
 
 .menuHamburger .option_1 .body .btn:nth-child(1),
@@ -267,6 +344,8 @@
   height: 27px;
   overflow: hidden;
   transition: height 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    transform 650ms 450ms cubic-bezier(0.215, 0.61, 0.355, 1),
+    opacity 350ms 450ms linear,
     overflow 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
@@ -372,6 +451,8 @@
   height: 27px;
   overflow: hidden;
   transition: height 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    transform 650ms 300ms cubic-bezier(0.215, 0.61, 0.355, 1),
+    opacity 350ms 300ms linear,
     overflow 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 .menuHamburger .option_1 .body .btn.active:nth-child(2) {
@@ -486,6 +567,24 @@
   top: 0;
   left: 0;
   z-index: -1;
+  overflow: hidden;
+  transform: translateY(-101%);
+  transition: transform 550ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.menuHamburger.active .option_1 .backGround {
+  transform: translateY(0);
+  transition: transform 850ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.menuHamburger .option_1 .backGround svg {
+  position: absolute;
+  width: 33.2vw;
+  height: auto;
+  bottom: -17.5vw;
+  right: 0;
+}
+.menuHamburger .option_1 .backGround svg path {
+  fill: white;
 }
 
 /* ------------------- Menu Services ------------------- */

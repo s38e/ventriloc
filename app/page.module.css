@@ -835,6 +835,12 @@
   .section_2 {
     height: auto !important;
   }
+  .section_1 {
+    padding-bottom: 80px !important;
+  }
+  .section_2 svg:nth-child(2) {
+    top: -1rem;
+  }
   .section_2 .body {
     padding: 0 !important;
     position: unset !important;

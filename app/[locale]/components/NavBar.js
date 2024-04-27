@@ -28,6 +28,16 @@ function NavBar() {
 
   useEffect(() => {
     // ------------------- heightMenuServices ------------------- //
+    // var menuHamburgerOption_1 = document.querySelector(
+    //   `.${styles.option_1} .${styles.body}`
+    // );
+    // var backGround = document.querySelector(
+    //   `.${styles.option_1} .${styles.backGround} .${styles.contact}`
+    // );
+
+    // var heightMenuHamburgerOption_1 = menuHamburgerOption_1.offsetHeight;
+    // backGround.style.top = heightMenuHamburgerOption_1 + "px";
+    // ------------------- heightMenuServices ------------------- //
     var menuServices = document.querySelector(
       `.${styles.menuServices} .${styles.body}`
     );
@@ -446,8 +456,25 @@ function NavBar() {
             <Link className={styles.btn} href="">
               fr
             </Link>
+            <div className={styles.contact}>
+              <h3>Let&apos;s work together</h3>
+              <button>Make an appointment</button>
+            </div>
           </div>
-          <div className={styles.backGround}></div>
+          <div className={styles.backGround}>
+            <svg
+              width="243"
+              height="526"
+              viewBox="0 0 243 526"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M86.8975 274.745C81.9629 272.26 76.1857 269.774 76.1857 262.92C76.1857 256.065 81.9629 253.58 86.8975 251.095C144.829 227.404 184.908 206.079 210.022 166.354C232.529 130.799 243 80.5315 243 0H134.679C139.614 73.5566 132.874 127.552 113.296 166.354C91.7519 209.125 54.4814 233.337 0 244.962V281.038C54.4814 292.663 91.7519 316.875 113.296 359.646C132.874 398.448 139.614 452.443 134.679 526H243C243 445.469 232.529 395.201 210.022 359.646C184.908 319.56 144.829 298.235 86.8975 274.745Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
         </div>
         <div className={styles.option_2}></div>
       </menu>

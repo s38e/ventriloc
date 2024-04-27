@@ -25,6 +25,7 @@ import CustomEase from "gsap/CustomEase";
 import Lenis from "@studio-freight/lenis";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
+import { isMobile } from "react-device-detect";
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 
@@ -554,7 +555,7 @@ export default function Home() {
       lenis.raf(time * 1000);
     });
     // ----------- Scale Video ----------- //
-    if (window.innerWidth >= 1024) {
+    if (!isMobile) {
       gsap.registerPlugin(ScrollTrigger);
       gsap.to(`.${styles.vid}`, {
         width: "1000px",
@@ -568,16 +569,19 @@ export default function Home() {
       });
     }
     // ----------- Smooth Scroll ----------- //
-    gsap.to(`.page_section_2__0PJYq svg:nth-child(2)`, {
-      scrollTrigger: {
-        trigger: `.${styles.section_2}`,
-        start: "top 33%",
-        end: "bottom bottom",
-        scrub: true,
-        // markers: true,
-      },
-      y: "12rem",
-    });
+    if (!isMobile) {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.to(`.${styles.section_2} svg:nth-child(2)`, {
+        scrollTrigger: {
+          trigger: `.${styles.section_2}`,
+          start: "top 33%",
+          end: "bottom bottom",
+          scrub: true,
+          // markers: true,
+        },
+        y: "12rem",
+      });
+    }
     // // ----------- Marquee ----------- //
     gsap.to(`.${styles.marquee}:nth-child(2) .${styles.marquee__inner}`, {
       xPercent: -100,
