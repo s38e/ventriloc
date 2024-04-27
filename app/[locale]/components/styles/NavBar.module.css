@@ -20,18 +20,22 @@
   position: relative;
   z-index: 99;
 }
+
 .NavBar .logo {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .NavBar .logo svg {
   width: 112px;
   height: auto;
 }
+
 .NavBar .logo svg path {
   fill: #ff682c;
 }
+
 .NavBar .links {
   display: flex;
   align-items: center;
@@ -41,6 +45,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .NavBar .links .link {
   padding: 7px 20px;
   border-radius: 6px;
@@ -55,17 +60,28 @@
   outline: none;
   border: none;
 }
+
 .NavBar .links .link svg {
   transition: 450ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .NavBar .links .link.active svg {
   transform: rotate(180deg);
 }
+
 .NavBar .links .link.active,
 .NavBar .links .link:hover {
   background-color: #512520;
 }
-.NavBar .contactButton {
+
+.NavBar .btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.NavBar .btns .contactButton {
   background-color: transparent;
   outline: none;
   border: none;
@@ -80,23 +96,28 @@
   padding-right: 20px;
   font-family: "PolySans";
 }
-.NavBar .contactButton span {
+
+.NavBar .btns .contactButton span {
   transition: 450ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.NavBar .contactButton.active span:nth-child(1) {
+
+.NavBar .btns .contactButton.active span:nth-child(1) {
   opacity: 0;
   visibility: hidden;
 }
-.NavBar .contactButton span:nth-child(2) {
+
+.NavBar .btns .contactButton span:nth-child(2) {
   position: absolute;
   opacity: 0;
   visibility: hidden;
 }
-.NavBar .contactButton.active span:nth-child(2) {
+
+.NavBar .btns .contactButton.active span:nth-child(2) {
   opacity: 1;
   visibility: visible;
 }
-.NavBar .contactButton::before {
+
+.NavBar .btns .contactButton::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -106,13 +127,367 @@
   border-radius: 200px;
   transition: 450ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.NavBar .contactButton:hover::before {
+
+.NavBar .btns .contactButton:hover::before {
   transform: scale(1.05);
 }
-.NavBar .contactButton.active::before {
+
+.NavBar .btns .contactButton.active::before {
   background-color: #ff682c;
 }
+
+.NavBar .btns .btnMenuHamburger {
+  width: 30px;
+  height: 12px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.NavBar .btns .btnMenuHamburger.active {
+  gap: 0;
+}
+
+.NavBar .btns .btnMenuHamburger span {
+  height: 1px;
+  width: 100%;
+  background-color: #863b32;
+  transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.NavBar .btns .btnMenuHamburger.active span {
+  transition: 0.5s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.NavBar .btns .btnMenuHamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(1px);
+}
+
+.NavBar .btns .btnMenuHamburger.active span:nth-child(2) {
+  transform: rotate(-45deg) translateY(-1px);
+}
 /* ------------------- Menus ------------------- */
+/* ------------------- Menu Hamburger ------------------- */
+.menuHamburger {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 51;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s 0.5s ease, opacity 0.5s 0.5s ease; /* تحديد مدة الانتقال 0.5 ثانية */
+}
+
+.menuHamburger.active {
+  transition: visibility 0.5s ease, opacity 0.5s ease; /* تحديد مدة الانتقال 0.5 ثانية */
+  z-index: 52;
+  opacity: 1;
+  visibility: visible;
+}
+
+.menuHamburger .option_1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.menuHamburger .option_1 .body {
+  background-color: #331613;
+  width: 100%;
+  padding: 120px 5% 50px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.menuHamburger .option_1 .body .btn {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 20px;
+  color: rgb(237, 208, 198);
+  font-family: "PolySans";
+}
+
+.menuHamburger .option_1 .body .btn:nth-child(1),
+.menuHamburger .option_1 .body .btn:nth-child(2) {
+  flex-direction: column;
+}
+
+.menuHamburger .option_1 .body .btn .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menuHamburger .option_1 .body .btn svg {
+  width: 12px;
+  height: 7px;
+  transition: transform 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  display: block;
+}
+
+.menuHamburger .option_1 .body .btn.active svg {
+  transform: rotate(180deg);
+}
+
+/* ------------------- Menu ServicesInMenu ------------------- */
+
+.menuHamburger .option_1 .body .btn .menuServicesInMenu {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding-top: 25px;
+}
+
+.menuHamburger .option_1 .body .btn:nth-child(1) {
+  height: 27px;
+  overflow: hidden;
+  transition: height 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    overflow 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.menuHamburger .option_1 .body .btn:nth-child(1).active {
+  overflow: visible;
+}
+
+.menuHamburger .option_1 .body .btn .menuServicesInMenu .card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 20px;
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid #863b32;
+  min-height: 106px;
+  font-family: "PolySans";
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.menuHamburger .option_1 .body .btn .menuServicesInMenu .card:nth-child(1) {
+  transition: transform 650ms 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
+    opacity 350ms 0.4s linear;
+}
+
+.menuHamburger .option_1 .body .btn .menuServicesInMenu .card:nth-child(2) {
+  transition: transform 650ms 0.4s cubic-bezier(0.215, 0.61, 0.355, 1),
+    opacity 350ms 0.5s linear;
+}
+
+.menuHamburger .option_1 .body .btn .menuServicesInMenu .card:nth-child(3) {
+  transition: transform 650ms 0.5s cubic-bezier(0.215, 0.61, 0.355, 1),
+    opacity 350ms 0.6s linear;
+}
+
+.menuHamburger .option_1 .body .btn.active .menuServicesInMenu .card {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.menuHamburger .option_1 .body .btn .menuServicesInMenu .card span {
+  color: rgb(237, 208, 198);
+  font-family: "PolySans";
+  font-size: 24px;
+}
+
+.menuHamburger .option_1 .body .btn .menuServicesInMenu .card span em {
+  font-family: "Ivar Display";
+  font-size: 26px;
+  font-style: normal;
+}
+
+.menuHamburger
+  .option_1
+  .body
+  .btn
+  .menuServicesInMenu
+  .card:nth-child(2)
+  span {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  text-wrap: nowrap;
+}
+
+.menuHamburger
+  .option_1
+  .body
+  .btn
+  .menuServicesInMenu
+  .card:nth-child(2)
+  span:nth-child(1) {
+  display: block;
+}
+
+.menuHamburger
+  .option_1
+  .body
+  .btn
+  .menuServicesInMenu
+  .card
+  span
+  span:nth-child(2) {
+  color: #ff682c;
+  line-height: 1;
+  font-size: 12px;
+  font-weight: 300;
+  padding-top: 10px;
+}
+
+.menuHamburger .option_1 .body .btn .menuServicesInMenu .card img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------------- Menu ServicesInMenu ------------------- */
+
+.menuHamburger .option_1 .body .btn:nth-child(2) {
+  height: 27px;
+  overflow: hidden;
+  transition: height 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    overflow 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.menuHamburger .option_1 .body .btn.active:nth-child(2) {
+  overflow: visible;
+}
+.menuHamburger .option_1 .body .btn .menuVentrilocInMenu a {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+.menuHamburger .option_1 .body .btn .menuVentrilocInMenu a:nth-child(1) {
+  transition: transform 350ms 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    opacity 250ms 0.2s linear;
+}
+.menuHamburger .option_1 .body .btn .menuVentrilocInMenu a:nth-child(2) {
+  transition: transform 350ms 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    opacity 250ms 0.3s linear;
+}
+.menuHamburger .option_1 .body .btn .menuVentrilocInMenu a:nth-child(3) {
+  transition: transform 350ms 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    opacity 250ms 0.4s linear;
+}
+.menuHamburger .option_1 .body .btn .menuVentrilocInMenu a:nth-child(4) {
+  transition: transform 350ms 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    opacity 250ms 0.5s linear;
+}
+.menuHamburger .option_1 .body .btn .menuVentrilocInMenu a:nth-child(5) {
+  transition: transform 350ms 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    opacity 250ms 0.6s linear;
+}
+.menuHamburger .option_1 .body .btn.active .menuVentrilocInMenu a {
+  opacity: 1;
+  transform: translateX(0);
+}
+.menuHamburger .option_1 .body .btn .menuVentrilocInMenu {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 13px;
+  width: 100%;
+}
+.menuHamburger .option_1 .body .btn .menuVentrilocInMenu a {
+  position: relative;
+  padding: 12px 20px;
+  font-size: 18px;
+  line-height: 1;
+  width: 100%;
+  text-align: start;
+}
+.menuHamburger .option_1 .body .btn .menuVentrilocInMenu a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid #ff682c;
+  transform: scale(0);
+  transform-origin: left;
+}
+.menuHamburger .option_1 .body .btn.active .menuVentrilocInMenu a::before {
+  transform: scale(1);
+}
+.menuHamburger
+  .option_1
+  .body
+  .btn.active
+  .menuVentrilocInMenu
+  a:nth-child(1):before {
+  transition: transform 1.05s 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.menuHamburger
+  .option_1
+  .body
+  .btn.active
+  .menuVentrilocInMenu
+  a:nth-child(2):before {
+  transition: transform 1.05s 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.menuHamburger
+  .option_1
+  .body
+  .btn.active
+  .menuVentrilocInMenu
+  a:nth-child(3):before {
+  transition: transform 1.05s 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.menuHamburger
+  .option_1
+  .body
+  .btn.active
+  .menuVentrilocInMenu
+  a:nth-child(4):before {
+  transition: transform 1.05s 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.menuHamburger
+  .option_1
+  .body
+  .btn.active
+  .menuVentrilocInMenu
+  a:nth-child(5):before {
+  transition: transform 1.05s 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* ------------------- Menu backGround ------------------- */
+
+.menuHamburger .option_1 .backGround {
+  background-color: #edd0c6;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 /* ------------------- Menu Services ------------------- */
 .menuServices {
   background-color: rgba(0, 0, 0, 0.2);
@@ -127,12 +502,14 @@
   opacity: 0;
   transition: visibility 0.5s 0.5s ease, opacity 0.5s 0.5s ease; /* تحديد مدة الانتقال 0.5 ثانية */
 }
+
 .menuServices.active {
   transition: visibility 0.5s ease, opacity 0.5s ease; /* تحديد مدة الانتقال 0.5 ثانية */
   z-index: 52;
   opacity: 1;
   visibility: visible;
 }
+
 .menuServices .backSection {
   position: absolute;
   top: 0;
@@ -148,6 +525,7 @@
   transform: translateY(-100%);
   transition: transform 1.25s 0.25s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .menuServices .backSection .figureSvg {
   position: absolute;
   top: 0;
@@ -157,6 +535,7 @@
   z-index: 2;
   overflow: hidden;
 }
+
 .menuServices .backSection .figureSvg svg {
   width: 100%;
   height: auto;
@@ -164,13 +543,16 @@
   bottom: -30%;
   right: 0;
 }
+
 .menuServices .backSection .figureSvg svg path {
   fill: #f6e2d8;
 }
+
 .menuServices.active .backSection {
   transition: transform 1.25s cubic-bezier(0.19, 1, 0.22, 1);
   transform: translateY(0);
 }
+
 .menuServices .backSection .contact {
   height: 80px;
   width: 100%;
@@ -179,6 +561,7 @@
   justify-content: flex-start;
   gap: 2rem;
 }
+
 .menuServices .backSection .contact h3 {
   font-size: 32px;
   line-height: 32px;
@@ -186,6 +569,7 @@
   font-family: "PolySans";
   color: rgb(255, 104, 44);
 }
+
 .menuServices .backSection .contact button {
   position: relative;
   color: rgb(237, 208, 198);
@@ -196,6 +580,7 @@
   background-color: transparent;
   font-size: 16px;
 }
+
 .menuServices .backSection .contact button::before {
   background-color: rgb(255, 104, 44);
   border-radius: 10rem;
@@ -208,9 +593,11 @@
   height: 100%;
   transition: scale 450ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .menuServices .backSection .contact button:hover::before {
   scale: 1.05;
 }
+
 .menuServices .body {
   display: flex;
   align-items: center;
@@ -223,10 +610,12 @@
   transition: transform 1.25s 0s cubic-bezier(0.19, 1, 0.22, 1);
   box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.5);
 }
+
 .menuServices.active .body {
   transition: transform 1.25s 0.25s cubic-bezier(0.19, 1, 0.22, 1);
   transform: translateY(0);
 }
+
 .menuServices .body .card {
   display: flex;
   align-items: flex-start;
@@ -242,10 +631,12 @@
   cursor: pointer;
   transition: 450ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+
 .menuServices .body .card:hover {
   background-color: #512520;
   transform: translateY(-20px);
 }
+
 .menuServices .body .card .headText {
   width: 100%;
   font-size: 40px;
@@ -253,27 +644,33 @@
   font-family: "PolySans";
   font-weight: 300;
 }
+
 .menuServices .body .card .headText span {
   font-family: "Ivar Display";
   font-size: 42.56px;
 }
+
 .menuServices .body .card:nth-child(2) .headText {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
 }
+
 .menuServices .body .card:nth-child(2) .headText span:nth-child(1) {
   font-family: "PolySans";
 }
+
 .menuServices .body .card:nth-child(2) .headText span:nth-child(1) span {
   font-family: "Ivar Display";
 }
+
 .menuServices .body .card:nth-child(2) .headText span:nth-child(2) {
   font-family: "PolySans";
   color: #ff682c;
   font-size: 16px;
 }
+
 .menuServices .body .card img {
   width: 100%;
   height: auto;
@@ -292,12 +689,14 @@
   opacity: 0;
   transition: visibility 0.5s 0.6s linear, opacity 0.5s 0.6s linear; /* تحديد مدة الانتقال 0.5 ثانية */
 }
+
 .menuVentriloc.active {
   z-index: 52;
   transition: visibility 0.5s linear, opacity 0.5s linear; /* تحديد مدة الانتقال 0.5 ثانية */
   opacity: 1;
   visibility: visible;
 }
+
 .menuVentriloc .body {
   display: flex;
   align-items: center;
@@ -311,10 +710,12 @@
   transform: translateY(-100%);
   box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.5);
 }
+
 .menuVentriloc.active .body {
   transition: transform 1.25s cubic-bezier(0.19, 1, 0.22, 1);
   transform: translateY(0%);
 }
+
 .menuVentriloc .body::before {
   position: absolute;
   content: "";
@@ -324,6 +725,7 @@
   width: 1px;
   background-color: #863b32;
 }
+
 .menuVentriloc .body::after {
   position: absolute;
   content: "";
@@ -333,6 +735,7 @@
   width: 1px;
   background-color: #863b32;
 }
+
 .menuVentriloc .body .links {
   padding: 0 40px;
   padding-top: calc(123px + 116px);
@@ -345,6 +748,7 @@
   border-left: 1px solid #863b32;
   border-right: 1px solid #863b32;
 }
+
 .menuVentriloc .body .links .link {
   min-width: 350px;
   font-size: 40px;
@@ -355,54 +759,67 @@
   color: #edd0c6;
   transition: color 0.3s; /* تطبيق التأثير عند hover وعند إلغاء hover */
 }
+
 .menuVentriloc .body .links .link:hover {
   color: #ff682c;
 }
+
 .menuVentriloc .body .links .link span {
   opacity: 0;
   display: block;
   transform: translateY(-100%);
 }
+
 .menuVentriloc.active .body .links .link:nth-child(1) span {
   transition: transform 0.7s 0.6s cubic-bezier(0.19, 1, 0.22, 1),
     opacity 0.7s 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .menuVentriloc.active .body .links .link:nth-child(2) span {
   transition: transform 0.7s 0.5s cubic-bezier(0.19, 1, 0.22, 1),
     opacity 0.7s 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .menuVentriloc.active .body .links .link:nth-child(3) span {
   transition: transform 0.7s 0.4s cubic-bezier(0.19, 1, 0.22, 1),
     opacity 0.7s 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .menuVentriloc.active .body .links .link:nth-child(4) span {
   transition: transform 0.7s 0.3s cubic-bezier(0.19, 1, 0.22, 1),
     opacity 0.7s 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .menuVentriloc.active .body .links .link:nth-child(5) span {
   transition: transform 0.7s 0.2s cubic-bezier(0.19, 1, 0.22, 1),
     opacity 0.7s 0.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .menuVentriloc.active .body .links .link span {
   opacity: 1;
   transform: translateY(0%);
 }
+
 .menuVentriloc .body .links .link:nth-child(1) span {
   transition: transform 0.7s 0.2s cubic-bezier(0.19, 1, 0.22, 1),
     opacity 0.7s 0.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .menuVentriloc .body .links .link:nth-child(2) span {
   transition: transform 0.7s 0.3s cubic-bezier(0.19, 1, 0.22, 1),
     opacity 0.7s 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .menuVentriloc .body .links .link:nth-child(3) span {
   transition: transform 0.7s 0.4s cubic-bezier(0.19, 1, 0.22, 1),
     opacity 0.7s 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .menuVentriloc .body .links .link:nth-child(4) span {
   transition: transform 0.7s 0.5s cubic-bezier(0.19, 1, 0.22, 1),
     opacity 0.7s 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .menuVentriloc .body .links .link:nth-child(5) span {
   transition: transform 0.7s 0.6s cubic-bezier(0.19, 1, 0.22, 1),
     opacity 0.7s 0.6s cubic-bezier(0.19, 1, 0.22, 1);
@@ -421,12 +838,14 @@
   opacity: 0;
   transition: visibility 0.5s 0.6s ease, opacity 0.5s 0.6s ease; /* تحديد مدة الانتقال 0.5 ثانية */
 }
+
 .menuContact.active {
   transition: visibility 0.5s ease, opacity 0.5s ease; /* تحديد مدة الانتقال 0.5 ثانية */
   z-index: 52;
   opacity: 1;
   visibility: visible;
 }
+
 .menuContact .body {
   background-color: #ebe6dd;
   color: black;
@@ -441,10 +860,12 @@
   box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.5);
   transition: transform 650ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
+
 .menuContact.active .body {
   transform: translateY(0%);
   transition: transform 1.25s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .menuContact .body .head {
   width: 100%;
   display: flex;
@@ -455,12 +876,14 @@
   transition: transform 0s 650ms linear, opacity 350ms 0.1s linear;
   transition-delay: 850ms !important;
 }
+
 .menuContact.active .body .head {
   transition: transform 850ms cubic-bezier(0.215, 0.61, 0.355, 1),
     opacity 350ms linear;
   opacity: 1;
   transform: translateY(0%);
 }
+
 .menuContact .body .head .left {
   display: flex;
   align-items: flex-start;
@@ -468,24 +891,28 @@
   flex-direction: column;
   gap: 2rem;
 }
+
 .menuContact .body .head .left p:first-child {
   color: rgb(134, 59, 50);
   font-size: 16px;
   font-weight: 300;
   font-family: "PolySans";
 }
+
 .menuContact .body .head .left p:last-child {
   color: rgb(134, 59, 50);
   font-size: 24px;
   font-weight: 300;
   font-family: "PolySans";
 }
+
 .menuContact .body .head .right {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
 }
+
 .menuContact .body .head .right .link:nth-child(1) {
   font-family: "PolySans";
   margin-bottom: 2rem;
@@ -493,6 +920,7 @@
   font-size: 16px;
   font-weight: 300;
 }
+
 .menuContact .body .head .right .link:nth-child(2),
 .menuContact .body .head .right .link:nth-child(3) {
   font-family: "PolySans";
@@ -501,6 +929,7 @@
   line-height: 40px;
   font-weight: 300;
 }
+
 .menuContact .body .form {
   position: relative;
   display: flex;
@@ -513,6 +942,7 @@
   transform: translateY(-100%);
   transition: transform 0s 650ms linear, opacity 350ms 0.1s linear;
 }
+
 .menuContact.active .body .form {
   transition: transform 850ms 0.4s cubic-bezier(0.215, 0.61, 0.355, 1),
     opacity 350ms 0.4s linear;
@@ -520,6 +950,7 @@
   opacity: 1;
   transform: translateY(0%);
 }
+
 .menuContact .body .form .top {
   display: flex;
   align-items: center;
@@ -527,6 +958,7 @@
   width: 100%;
   gap: 1rem;
 }
+
 .menuContact .body .form .top .right,
 .menuContact .body .form .top .left {
   display: flex;
@@ -536,6 +968,7 @@
   gap: 1rem;
   width: 100%;
 }
+
 .menuContact .body .form input,
 .menuContact .body .form .top .right input,
 .menuContact .body .form .top .left input {
@@ -550,12 +983,14 @@
   font-size: 24px;
   font-weight: 300;
 }
+
 .menuContact .body .form input::placeholder,
 .menuContact .body .form .top .right input::placeholder,
 .menuContact .body .form .top .left input::placeholder {
   font-family: "PolySans";
   color: rgb(255, 104, 44);
 }
+
 .menuContact .body .form .btn {
   display: block;
   position: absolute;
@@ -573,6 +1008,7 @@
   background-color: transparent;
   z-index: 1;
 }
+
 .menuContact .body .form .btn::before {
   position: absolute;
   content: "";
@@ -585,17 +1021,35 @@
   z-index: -1;
   transition: scale 450ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .menuContact .body .form .btn:hover::before {
   scale: 1.05;
 }
-/* ------------------- Responsive ------------------- */
+/* ------------------- Responsive Design ------------------- */
+/* ------------------- 1024px ------------------- */
+@media (max-width: 1024px) {
+  .NavBar .logo svg {
+    width: 231px;
+  }
+  .NavBar .links {
+    display: none;
+  }
+  .menuContact .body .form input,
+  .menuContact .body .form .top .right input,
+  .menuContact .body .form .top .left input {
+    font-size: 18px;
+  }
+  .menuContact .body .form .btn {
+    font-size: 14px;
+    bottom: 4%;
+  }
+  .NavBar .btns .btnMenuHamburger {
+    display: flex;
+  }
+}
+/* ------------------- 768px ------------------- */
 @media (min-width: 768px) {
   .NavBar .logo svg {
     width: 188px;
-  }
-}
-@media (min-width: 1024px) {
-  .NavBar .logo svg {
-    width: 231px;
   }
 }

@@ -13,6 +13,19 @@ const { Link, useRouter, usePathname, redirect } =
 
 function NavBar() {
   const t = useTranslations("NavBar");
+  // ------------------- State MenuServices ------------------- //
+  const [menuServicesActive, setMenuServices] = useState(false);
+  // ------------------- State MenuVentriloc ------------------- //
+  const [menuVentrilocActive, setMenuVentriloc] = useState(false);
+  // ------------------- State MenuContact ------------------- //
+  const [menuContactActive, setMenuContact] = useState(false);
+  // ------------------- State MenuHamburger ------------------- //
+  const [menuHamburgerActive, setMenuHamburger] = useState(false);
+  // ------------------- State MenuHamburger ------------------- //
+  const [menuServicesInMenuActive, setMenuServicesInMenu] = useState(true);
+  // ------------------- State MenuHamburger ------------------- //
+  const [menuVentrilocInMenuActive, setMenuVentrilocInMenu] = useState(true);
+
   useEffect(() => {
     // ------------------- heightMenuServices ------------------- //
     var menuServices = document.querySelector(
@@ -22,29 +35,93 @@ function NavBar() {
 
     var heightMenuServices = menuServices.offsetHeight;
     backSection.style.height = 80 + heightMenuServices + "px";
-  });
-  // ------------------- State MenuServices ------------------- //
-  const [menuServicesActive, setMenuServices] = useState(false);
-  // ------------------- State MenuVentriloc ------------------- //
-  const [menuVentrilocActive, setMenuVentriloc] = useState(false);
-  // ------------------- State MenuContact ------------------- //
-  const [menuContactActive, setMenuContact] = useState(false);
-  // تعيين دالة تفعيل العناصر الأخرى عند تفعيل عنصر جديد
+    // // ------------------- heightMenuServicesInMenu ------------------- //
+    // // ------------------- Button 1 ------------------- //
+    const runCodeWhenBTN1Active = () => {
+      const menuServicesInMenu = document.querySelector(
+        `.${styles.menuServicesInMenu}`
+      );
+      const btn_1 = document.querySelector(
+        `.${styles.option_1} .${styles.body} .${styles.btn}:nth-child(1)`
+      );
+
+      const heightMenuServicesInMenu = menuServicesInMenu.offsetHeight;
+      btn_1.style.height = 27 + heightMenuServicesInMenu + "px";
+    };
+
+    const resetHeightBtn_1 = () => {
+      const btn_1 = document.querySelector(
+        `.${styles.option_1} .${styles.body} .${styles.btn}:nth-child(1)`
+      );
+      btn_1.style.height = "27px";
+    };
+
+    if (menuServicesInMenuActive) {
+      runCodeWhenBTN1Active();
+    } else {
+      resetHeightBtn_1();
+    }
+    // // ------------------- Button 2 ------------------- //
+    const runCodeWhenBTN2Active = () => {
+      const menuVentrilocInMenuActive = document.querySelector(
+        `.${styles.menuVentrilocInMenu}`
+      );
+      const btn_2 = document.querySelector(
+        `.${styles.option_1} .${styles.body} .${styles.btn}:nth-child(2)`
+      );
+
+      const heightMenuVentrilocInMenu = menuVentrilocInMenuActive.offsetHeight;
+      btn_2.style.height = 27 + heightMenuVentrilocInMenu + "px";
+    };
+
+    const resetHeightBtn_2 = () => {
+      const btn_2 = document.querySelector(
+        `.${styles.option_1} .${styles.body} .${styles.btn}:nth-child(2)`
+      );
+      btn_2.style.height = "27px";
+    };
+
+    if (menuVentrilocInMenuActive) {
+      runCodeWhenBTN2Active();
+    } else {
+      resetHeightBtn_2();
+    }
+  }, [menuServicesInMenuActive, menuVentrilocInMenuActive]);
+  // ------------------- Active Menus ------------------- //
   const activateMenu = (menu) => {
     if (menu === "menuServices") {
       setMenuServices(!menuServicesActive); // تغيير حالة القائمة إلى الحالة المعاكسة
       setMenuVentriloc(false); // إغلاق القوائم الأخرى
       setMenuContact(false);
+      setMenuHamburger(false);
     } else if (menu === "menuVentriloc") {
       setMenuVentriloc(!menuVentrilocActive); // تغيير حالة القائمة إلى الحالة المعاكسة
       setMenuServices(false); // إغلاق القوائم الأخرى
       setMenuContact(false);
+      setMenuHamburger(false);
     } else if (menu === "menuContact") {
       setMenuContact(!menuContactActive); // تغيير حالة القائمة إلى الحالة المعاكسة
       setMenuServices(false); // إغلاق القوائم الأخرى
       setMenuVentriloc(false);
+      setMenuHamburger(false);
+    } else if (menu === "menuHamburger") {
+      setMenuHamburger(!menuHamburgerActive); // تغيير حالة القائمة إلى الحالة المعاكسة
+      setMenuServices(false); // إغلاق القوائم الأخرى
+      setMenuVentriloc(false);
+      setMenuContact(false);
+    } else if (menu === "menuServicesInMenu") {
+      setMenuServicesInMenu(!menuServicesInMenuActive); // تغيير حالة القائمة إلى الحالة المعاكسة
+      setMenuServices(false); // إغلاق القوائم الأخرى
+      setMenuVentriloc(false);
+      setMenuContact(false);
+    } else if (menu === "menuVentrilocInMenu") {
+      setMenuVentrilocInMenu(!menuVentrilocInMenuActive); // تغيير حالة القائمة إلى الحالة المعاكسة
+      setMenuServices(false); // إغلاق القوائم الأخرى
+      setMenuVentriloc(false);
+      setMenuContact(false);
     }
   };
+
   return (
     <>
       <nav className={styles.NavBar}>
@@ -142,15 +219,26 @@ function NavBar() {
             fr
           </Link>
         </div>
-        <button
-          className={`${styles.contactButton} ${
-            menuContactActive ? `${styles.active}` : ""
-          }`}
-          onClick={() => activateMenu("menuContact")}
-        >
-          <span>Contact us</span>
-          <span>Close</span>
-        </button>
+        <div className={styles.btns}>
+          <button
+            className={`${styles.contactButton} ${
+              menuContactActive ? `${styles.active}` : ""
+            }`}
+            onClick={() => activateMenu("menuContact")}
+          >
+            <span>Contact us</span>
+            <span>Close</span>
+          </button>
+          <button
+            className={`${styles.btnMenuHamburger} ${
+              menuHamburgerActive ? `${styles.active}` : ""
+            }`}
+            onClick={() => activateMenu("menuHamburger")}
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </nav>
       <menu
         className={`${styles.menuServices} ${
@@ -273,6 +361,95 @@ function NavBar() {
             <button className={styles.btn}>Send</button>
           </form>
         </div>
+      </menu>
+      <menu
+        className={`${styles.menuHamburger} ${
+          menuHamburgerActive ? `${styles.active}` : ""
+        }`}
+      >
+        <div className={styles.option_1}>
+          <div className={styles.body}>
+            <button
+              className={`${styles.btn}  ${
+                menuServicesInMenuActive ? `${styles.active}` : ""
+              }`}
+              onClick={() => activateMenu("menuServicesInMenu")}
+            >
+              <div className={styles.head}>
+                <span>services</span>
+                <svg
+                  width="10"
+                  height="6"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M1 1L5 5L9 1" stroke="currentColor"></path>
+                </svg>
+              </div>
+              <menu className={styles.menuServicesInMenu}>
+                <div className={styles.card}>
+                  <span>
+                    <em>Data </em>Integration
+                  </span>
+                  <Image src={menuNavServices_Img_1} alt="Data Integration" />
+                </div>
+                <div className={styles.card}>
+                  <span>
+                    <span>
+                      <em>Data </em>Visualization
+                    </span>
+                    <span>Power BI Experts</span>
+                  </span>
+                  <Image src={menuNavServices_Img_2} alt="Data Visualization" />
+                </div>
+                <div className={styles.card}>
+                  <span>
+                    <em>Analytical </em>Alignment
+                  </span>
+                  <Image
+                    src={menuNavServices_Img_3}
+                    alt="Analytical Alignment"
+                  />
+                </div>
+              </menu>
+            </button>
+            <button
+              className={`${styles.btn} ${
+                menuVentrilocInMenuActive ? `${styles.active}` : ""
+              }`}
+              onClick={() => activateMenu("menuVentrilocInMenu")}
+            >
+              <div className={styles.head}>
+                <span>ventriloc</span>
+                <svg
+                  width="10"
+                  height="6"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M1 1L5 5L9 1" stroke="currentColor"></path>
+                </svg>
+              </div>
+              <menu className={styles.menuVentrilocInMenu}>
+                <Link href="">About</Link>
+                <Link href="">Clients</Link>
+                <Link href="">Team</Link>
+                <Link href="">Careers</Link>
+                <Link href="">Blog</Link>
+              </menu>
+            </button>
+            <Link className={styles.btn} href="">
+              contact
+            </Link>
+            <Link className={styles.btn} href="">
+              fr
+            </Link>
+          </div>
+          <div className={styles.backGround}></div>
+        </div>
+        <div className={styles.option_2}></div>
       </menu>
     </>
   );
