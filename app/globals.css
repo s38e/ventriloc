@@ -24,7 +24,7 @@ html,
 body {
 }
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   color: #edd0c6;
   background: #401d19;
 }
