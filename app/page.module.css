@@ -22,7 +22,7 @@
 .section {
   padding: 0 5%;
   width: 100%;
-  padding-bottom: 150px !important;
+  padding-bottom: 150px;
 }
 /* ------------------- Section 1 ------------------- */
 .section_1 {
@@ -231,7 +231,7 @@
   transition: 450ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .section_3 .body .card:hover {
-  transform: translateY(-20px) !important;
+  transform: translateY(-20px);
   background-color: #512520;
 }
 .section_3 .body .card img {
@@ -351,7 +351,7 @@
 }
 .section_4 .hr {
   position: relative;
-  padding: 0 5% !important;
+  padding: 0 5%;
   height: 1px;
   overflow: hidden;
   width: calc(100% - 10%);
@@ -440,6 +440,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
 }
+.section_5 .swiper .cardSticky,
 .section_5 .sticky .cards .cardSticky {
   overflow: hidden;
   position: relative;
@@ -455,35 +456,44 @@
   gap: 1.5rem;
   max-width: 450px;
 }
+.section_5 .swiper .cardSticky:nth-child(1),
 .section_5 .sticky .cards .cardSticky:nth-child(1) {
   background-color: #ebd4c9;
   color: black;
 }
+.section_5 .swiper .cardSticky svg path,
 .section_5 .sticky .cards .cardSticky svg path {
   fill: white;
 }
+.section_5 .swiper .cardSticky:nth-child(2),
 .section_5 .sticky .cards .cardSticky:nth-child(2) {
   background-color: #816729;
 }
+.section_5 .swiper .cardSticky:nth-child(3),
 .section_5 .sticky .cards .cardSticky:nth-child(3) {
   z-index: -1;
   background-color: #1f3138;
 }
+.section_5 .swiper .cardSticky:nth-child(4),
 .section_5 .sticky .cards .cardSticky:nth-child(4) {
   background-color: #ff682c;
 }
+.section_5 .swiper .cardSticky:nth-child(1) svg,
 .section_5 .sticky .cards .cardSticky:nth-child(1) svg {
   height: 40px;
   width: auto;
 }
+.section_5 .swiper .cardSticky:nth-child(2) svg,
 .section_5 .sticky .cards .cardSticky:nth-child(2) svg {
   height: 60px;
   width: auto;
 }
+.section_5 .swiper .cardSticky:nth-child(3) svg,
 .section_5 .sticky .cards .cardSticky:nth-child(3) svg {
   height: 77px;
   width: 188px;
 }
+.section_5 .swiper .cardSticky:nth-child(4) svg,
 .section_5 .sticky .cards .cardSticky:nth-child(4) svg {
   position: absolute;
   top: 0;
@@ -491,9 +501,11 @@
   height: auto;
   width: 93%;
 }
+.section_5 .swiper .cardSticky:nth-child(4),
 .section_5 .sticky .cards .cardSticky:nth-child(4) {
   align-items: center;
 }
+.section_5 .swiper .cardSticky:nth-child(4) .btn,
 .section_5 .sticky .cards .cardSticky:nth-child(4) .btn {
   position: relative;
   z-index: 1;
@@ -511,6 +523,7 @@
   cursor: pointer;
   transition: 0.3s;
 }
+.section_5 .swiper .cardSticky:nth-child(4) .btn::before,
 .section_5 .sticky .cards .cardSticky:nth-child(4) .btn::before {
   position: absolute;
   content: "";
@@ -524,14 +537,17 @@
   transition: 0.3s;
   border-radius: 50%;
 }
+.section_5 .swiper .cardSticky:nth-child(4) .btn:hover,
 .section_5 .sticky .cards .cardSticky:nth-child(4) .btn:hover {
   color: #401d19;
   scale: 1.05;
 }
+.section_5 .swiper .cardSticky:nth-child(4) .btn:hover::before,
 .section_5 .sticky .cards .cardSticky:nth-child(4) .btn:hover::before {
   border-radius: 0;
   top: 0;
 }
+.section_5 .swiper .cardSticky:nth-child(4) span,
 .section_5 .sticky .cards .cardSticky:nth-child(4) span {
   position: absolute;
   top: 50%;
@@ -544,35 +560,44 @@
   font-family: "PolySans";
   color: white;
 }
+.section_5 .swiper .cardSticky:nth-child(4) svg path,
 .section_5 .sticky .cards .cardSticky:nth-child(4) svg path {
   fill: #7d6731;
 }
+.section_5 .swiper .cardSticky p,
 .section_5 .sticky .cards .cardSticky p {
   font-family: "PolySans";
   font-size: 18px;
   line-height: 27px;
 }
+.section_5 .swiper .cardSticky .caption,
 .section_5 .sticky .cards .cardSticky .caption {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
 }
+.section_5 .swiper .cardSticky h4,
 .section_5 .sticky .cards .cardSticky h4 {
   color: rgb(237, 208, 198);
   font-size: 28px;
   font-weight: 300;
   font-family: "PolySans";
 }
+.section_5 .swiper .cardSticky .caption p:nth-child(1),
 .section_5 .sticky .cards .cardSticky .caption p:nth-child(1) {
   font-size: 30px;
   font-weight: 300;
   font-family: "Ivar Display";
 }
+.section_5 .swiper .cardSticky .caption p:nth-child(2),
 .section_5 .sticky .cards .cardSticky .caption p:nth-child(2) {
   font-family: "PolySans";
   font-size: 14px;
   font-weight: 300;
+}
+.section_5 .swiper {
+  width: 100%;
 }
 .section_5 .faq {
   width: 100%;
@@ -851,29 +876,87 @@
 }
 /* ------------------- 1024px ------------------- */
 @media (max-width: 1024px) {
-  .section_2 {
-    height: auto !important;
-  }
-  .section_1 {
+  .section {
+    padding: 0 3%;
+    width: 100%;
+    /* padding-bottom: 150px ; */
     padding-bottom: 80px !important;
+  }
+  .section_2 {
+    height: auto;
+  }
+  .section_5 {
+    gap: 6rem;
   }
   .section_2 svg:nth-child(2) {
     top: -1rem;
   }
   .section_2 .body {
-    padding: 0 !important;
-    position: unset !important;
+    padding: 0;
+    position: unset;
   }
   .section_2 .body .video {
     transform: translateX(0);
-    position: unset !important;
+    position: unset;
   }
   .section_2 .body .video .vid {
-    position: unset !important;
-    width: 100% !important;
+    position: unset;
+    width: 100%;
   }
   .section_2 .body .text {
-    margin-top: 0 !important;
+    margin-top: 0;
+  }
+  .section_3 .partner {
+    gap: 3rem;
+    padding: 0;
+    padding-top: 80px;
+  }
+  .section_4 {
+    padding-top: 80px;
+    margin-bottom: 80px;
+  }
+  .section_4 .BackGround {
+    height: 100%;
+    padding: 0;
+  }
+  .section_5 .faq {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
+  }
+  .section_5 .faq .left {
+    gap: 1.5rem;
+  }
+  .section_5 .sticky {
+    display: none;
+  }
+  .section_5 .swiper .cardSticky,
+  .section_5 .sticky .cards .cardSticky {
+    padding: 38px 35px 30px 35px;
+    border-radius: 30px;
+  }
+  .section_5 .swiper .cardSticky h4,
+  .section_5 .sticky .cards .cardSticky h4 {
+    font-size: 20px;
+  }
+  .section_5 .swiper .cardSticky p,
+  .section_5 .sticky .cards .cardSticky p {
+    font-size: 14px;
+    line-height: 1.33333;
+  }
+  .section_4 h3 {
+    font-size: 66px;
+    line-height: 66px;
+  }
+  .section_4 h3 .spanSection_4 {
+    line-height: 66px;
+  }
+  .section_4 .title {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+  .section_4 .title .text {
+    font-size: 28px;
+    line-height: 28px;
   }
 }
 /* ------------------- 915px ------------------- */

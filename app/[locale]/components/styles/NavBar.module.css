@@ -1127,6 +1127,13 @@
 /* ------------------- Responsive Design ------------------- */
 /* ------------------- 1024px ------------------- */
 @media (max-width: 1024px) {
+  .NavBar {
+    padding: 0 3%;
+    height: 60px;
+  }
+  .menuHamburger .option_1 .body {
+    padding: 100px 3% 50px 3% !important;
+  }
   .NavBar .logo svg {
     width: 231px;
   }
