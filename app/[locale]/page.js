@@ -1588,7 +1588,7 @@ export default function Home() {
           </div>
           <Swiper
             className={styles.swiper}
-            spaceBetween={30}
+            spaceBetween={20}
             slidesPerView={3}
             modules={[Pagination]}
           >

@@ -596,8 +596,13 @@
   font-size: 14px;
   font-weight: 300;
 }
+.section_5 {
+  overflow: visible;
+}
 .section_5 .swiper {
+  overflow: visible;
   width: 100%;
+  display: none;
 }
 .section_5 .faq {
   width: 100%;
@@ -887,6 +892,8 @@
   }
   .section_5 {
     gap: 6rem;
+    overflow: hidden;
+    padding-top: 100px;
   }
   .section_2 svg:nth-child(2) {
     top: -1rem;
@@ -913,7 +920,7 @@
   }
   .section_4 {
     padding-top: 80px;
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
   }
   .section_4 .BackGround {
     height: 100%;
@@ -929,10 +936,25 @@
   .section_5 .sticky {
     display: none;
   }
+  .section_5 .swiper {
+    display: flex;
+  }
   .section_5 .swiper .cardSticky,
   .section_5 .sticky .cards .cardSticky {
-    padding: 38px 35px 30px 35px;
+    padding: 30px;
     border-radius: 30px;
+  }
+  .section_5 .swiper .cardSticky:nth-child(1) {
+    transform: rotate(-10deg);
+  }
+  .section_5 .swiper .cardSticky:nth-child(2) {
+    transform: rotate(7deg);
+  }
+  .section_5 .swiper .cardSticky:nth-child(3) {
+    transform: rotate(-10deg);
+  }
+  .section_5 .swiper .cardSticky:nth-child(4) {
+    transform: rotate(10deg);
   }
   .section_5 .swiper .cardSticky h4,
   .section_5 .sticky .cards .cardSticky h4 {
@@ -941,11 +963,20 @@
   .section_5 .swiper .cardSticky p,
   .section_5 .sticky .cards .cardSticky p {
     font-size: 14px;
-    line-height: 1.33333;
+    line-height: 1.2;
   }
   .section_4 h3 {
     font-size: 66px;
     line-height: 66px;
+  }
+  .section_5 .swiper .cardSticky .caption p:nth-child(1),
+  .section_5 .sticky .cards .cardSticky .caption p:nth-child(1) {
+    font-size: 24px;
+  }
+  .section_5 .swiper .cardSticky .caption p:nth-child(2),
+  .section_5 .sticky .cards .cardSticky .caption p:nth-child(2) {
+    line-height: 1;
+    font-size: 12px;
   }
   .section_4 h3 .spanSection_4 {
     line-height: 66px;
@@ -957,6 +988,29 @@
   .section_4 .title .text {
     font-size: 28px;
     line-height: 28px;
+  }
+  .section_5 .sticky .cards .cardSticky:nth-child(2) svg,
+  .section_5 .swiper .cardSticky:nth-child(2) svg {
+    height: 40px;
+  }
+  .section_5 .swiper .cardSticky:nth-child(1) svg,
+  .section_5 .sticky .cards .cardSticky:nth-child(1) svg {
+    height: 30px;
+  }
+  .section_5 .swiper .cardSticky:nth-child(3) svg,
+  .section_5 .sticky .cards .cardSticky:nth-child(3) svg {
+    height: 26px;
+    width: 148px;
+  }
+  .section_5 .swiper .cardSticky,
+  .section_5 .sticky .cards .cardSticky {
+    min-height: 370px;
+    gap: 0;
+  }
+  .section_5 .swiper .cardSticky:nth-child(4) span,
+  .section_5 .sticky .cards .cardSticky:nth-child(4) span {
+    font-size: 75px;
+    line-height: 70px;
   }
 }
 /* ------------------- 915px ------------------- */
