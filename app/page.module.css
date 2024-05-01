@@ -135,6 +135,7 @@
   font-size: 18px;
   position: relative;
   z-index: -1;
+  font-family: "PolySans";
 }
 .section_2 .body .video {
   position: absolute;
