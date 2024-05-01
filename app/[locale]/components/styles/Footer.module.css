@@ -102,3 +102,25 @@
 .Footer .left .links .linksCol p a:hover span:nth-child(1) {
   transform: translateY(-100%);
 }
+/* ------------------- Responsive Design ------------------- */
+/* ------------------- 1024px ------------------- */
+
+@media (max-width: 1024px) {
+  .Footer {
+    padding: 3rem 3%;
+    height: 450px;
+  }
+  .Footer .left .links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 50px 20px;
+    width: 100%;
+  }
+  .Footer .left .links .linksCol {
+    width: 100%;
+  }
+  .Footer .left .links .space:nth-child(2),
+  .Footer .left .links .space:nth-child(6),
+  .Footer .left .links .space:nth-child(8) {
+    display: none;
+  }
+}

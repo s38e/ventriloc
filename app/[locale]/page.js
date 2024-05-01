@@ -31,6 +31,7 @@ import Footer from "./components/Footer";
 import { isMobile } from "react-device-detect";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import "swiper/css/pagination";
 import "swiper/css";
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
@@ -1591,7 +1592,11 @@ export default function Home() {
             spaceBetween={20}
             slidesPerView={3}
             modules={[Pagination]}
+            pagination={{
+              el: `.${styles.swiperPagination}`,
+            }}
           >
+            <div className={styles.swiperPagination}></div>
             <SwiperSlide className={styles.cardSticky}>
               <svg
                 width="63"
