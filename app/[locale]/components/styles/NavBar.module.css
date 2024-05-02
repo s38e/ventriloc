@@ -194,7 +194,6 @@
   opacity: 1;
   visibility: visible;
 }
-
 .menuHamburger .option_1 {
   display: flex;
   align-items: flex-start;
@@ -383,7 +382,41 @@
   transition: transform 650ms 0.5s cubic-bezier(0.215, 0.61, 0.355, 1),
     opacity 350ms 0.6s linear;
 }
-
+.menuHamburger .option_1 .body .btn .menuServicesInMenu .card:nth-child(4) {
+  transition: transform 650ms 0.6s cubic-bezier(0.215, 0.61, 0.355, 1),
+    opacity 350ms 0.7s linear;
+}
+.menuHamburger .option_1 .body .btn .menuServicesInMenu .card:nth-child(4) {
+  border: none;
+  background-color: #edd0c6;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: row;
+  color: #ff682c;
+  position: relative;
+}
+.menuHamburger
+  .option_1
+  .body
+  .btn
+  .menuServicesInMenu
+  .card:nth-child(4)
+  span {
+  color: #ff682c;
+  line-height: 1;
+  text-align: start;
+  font-size: 18px;
+  text-decoration: underline;
+}
+.menuHamburger .option_1 .body .btn .menuServicesInMenu .card:nth-child(4) svg {
+  position: absolute;
+  rotate: 180deg;
+  height: calc(100% - 28px);
+  width: auto;
+  top: 14px;
+  right: 11px;
+}
 .menuHamburger .option_1 .body .btn.active .menuServicesInMenu .card {
   transform: translateY(0);
   opacity: 1;
@@ -1172,7 +1205,49 @@
   .NavBar .btns .contactButton span {
     font-size: 12px;
   }
+  .menuHamburger .option_1 .body {
+    height: 100%;
+  }
+  .menuHamburger .option_1 .body .btn .menuServicesInMenu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .menuHamburger .option_1 .body .btn .menuServicesInMenu .card {
+    padding: 14px 11px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 11px;
+  }
+  .menuHamburger .option_1 .body .btn .menuServicesInMenu .card span span {
+    align-items: center !important;
+  }
+  .menuHamburger .option_1 .body .btn .menuServicesInMenu .card img {
+    display: none;
+  }
+  .menuHamburger
+    .option_1
+    .body
+    .btn
+    .menuServicesInMenu
+    .card:nth-child(2)
+    span {
+    text-wrap: wrap;
+  }
+  .menuHamburger .option_1 .body .contact,
+  .menuHamburger .option_1 .backGround {
+    display: none;
+  }
+  .menuHamburger
+    .option_1
+    .body
+    .btn
+    .menuServicesInMenu
+    .card
+    span
+    span:nth-child(2) {
+    padding-top: 0;
+  }
 }
+/* ------------------- 768px ------------------- */
 @media (min-width: 768px) {
   .NavBar .logo svg {
     width: 188px;

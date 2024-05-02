@@ -1181,3 +1181,15 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+/* ------------------- 414px ------------------- */
+@media (max-width: 414px) {
+  .section_3 .head h2 .span1,
+  .section_3 .head h2 h2 span:nth-child(1),
+  .section_3 .head h2 .span2,
+  .section_3 .head h2 span:nth-child(2) {
+    padding: 0 7px;
+  }
+  .section_3 .head h2 svg {
+    top: -46px;
+  }
+}
