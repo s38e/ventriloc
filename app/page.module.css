@@ -1082,8 +1082,15 @@
 }
 /* ------------------- 768px ------------------- */
 @media (max-width: 768px) {
+  .section_1 {
+    padding-bottom: 40px !important;
+  }
   .section_1 .head {
     gap: 2rem;
+  }
+  .section_1 .head .btn {
+    font-size: 14px;
+    height: 40px;
   }
   .section_1 .head h1,
   .section_1 .head h1 span {
