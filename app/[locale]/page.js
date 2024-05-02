@@ -1857,6 +1857,9 @@ export default function Home() {
                   <p className={styles.date}>
                     Business Intelligence — Case study — Power BI — July 3, 2023
                   </p>
+                  <div className={styles.img}>
+                    <Image src={PowerBIReport} alt="PowerBIReport" />
+                  </div>
                   <h3 className={styles.title}>
                     A Power BI report for the Fondation du Collège de Lévis Golf
                     Tournament players
@@ -1872,6 +1875,12 @@ export default function Home() {
               <div className={styles.post}>
                 <div className={styles.left}>
                   <p className={styles.date}>Uncategorized — May 27, 2023</p>
+                  <div className={styles.img}>
+                    <Image
+                      src={MicrosoftTeamsImage4}
+                      alt="MicrosoftTeamsImage4"
+                    />
+                  </div>
                   <h3 className={styles.title}>
                     How much does Microsoft Fabric cost? Price explained in
                     detail.
