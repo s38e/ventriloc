@@ -124,3 +124,9 @@
     display: none;
   }
 }
+/* ------------------- 768px ------------------- */
+@media (max-width: 768px) {
+  .Footer .left .links .linksCol {
+    font-size: 16px;
+  }
+}

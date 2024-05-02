@@ -1592,6 +1592,23 @@ export default function Home() {
             spaceBetween={20}
             slidesPerView={3}
             modules={[Pagination]}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              450: {
+                slidesPerView: 1.5,
+              },
+              600: {
+                slidesPerView: 2,
+              },
+              769: {
+                slidesPerView: 3,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
             pagination={{
               el: `.${styles.swiperPagination}`,
             }}
