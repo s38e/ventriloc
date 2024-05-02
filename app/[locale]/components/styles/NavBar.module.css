@@ -1185,6 +1185,10 @@
   .NavBar .btns .btnMenuHamburger {
     display: flex;
   }
+  .menuServices,
+  .menuVentriloc {
+    display: none;
+  }
 }
 /* ------------------- 768px ------------------- */
 @media (max-width: 768px) {

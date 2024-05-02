@@ -126,7 +126,8 @@
 }
 /* ------------------- 768px ------------------- */
 @media (max-width: 768px) {
-  .Footer .left .links .linksCol {
-    font-size: 16px;
+  .Footer svg:nth-child(2),
+  .Footer .left {
+    display: none;
   }
 }
