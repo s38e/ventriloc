@@ -675,6 +675,7 @@
   color: rgb(237, 208, 198);
   font-family: "PolySans";
   text-align: start;
+  width: 100%;
 }
 .section_5 .faq .questions .question .answer {
   display: none;
@@ -1173,6 +1174,19 @@
   }
   .section_5 .faq .questions .question .answer {
     font-size: 14.4px;
+  }
+  .section_5 .faq .questions .question .head svg {
+    width: 10px !important;
+    height: 10px !important;
+  }
+  .section_5 .faq .questions .question {
+    padding: 13px 20px;
+  }
+  .section_5 .faq .questions .question .head {
+    gap: 20px;
+  }
+  .section_5 .faq .questions .question .answer {
+    padding-left: 30px;
   }
 }
 /* ------------------- 552px ------------------- */
