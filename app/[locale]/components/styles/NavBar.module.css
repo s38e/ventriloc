@@ -1154,6 +1154,25 @@
   }
 }
 /* ------------------- 768px ------------------- */
+@media (max-width: 768px) {
+  .NavBar .logo svg {
+    width: 112px !important;
+    height: auto;
+  }
+  .NavBar .logo svg {
+    width: 188px;
+  }
+  .NavBar .btns {
+    gap: 1.25rem;
+  }
+  .NavBar .btns .contactButton {
+    padding: 7px 15px;
+    height: auto;
+  }
+  .NavBar .btns .contactButton span {
+    font-size: 12px;
+  }
+}
 @media (min-width: 768px) {
   .NavBar .logo svg {
     width: 188px;

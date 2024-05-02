@@ -981,9 +981,9 @@
     line-height: 1.2;
   }
   .section_4 h3 {
-    font-size: 66px;
-    line-height: 66px;
-  }
+    font-size: 8.53333vw;
+    line-height: 1;
+}
   .section_5 .swiper .cardSticky .caption p:nth-child(1),
   .section_5 .sticky .cards .cardSticky .caption p:nth-child(1) {
     font-size: 24px;
@@ -1076,8 +1076,47 @@
 }
 /* ------------------- 768px ------------------- */
 @media (max-width: 768px) {
+  .section_1 .head {
+    gap: 2rem;
+  }
+  .section_1 .head h1,
+  .section_1 .head h1 span {
+    font-size: 11.2vw !important;
+    line-height: 11.2vw !important;
+  }
+  .section_1 .head h1 .spanHeadSection_1 {
+    display: inline;
+  }
+  .section_1 .head h1 .spanHeadSection_1:nth-child(2) {
+    margin-left: 2.5vw;
+  }
   .section_7 .container button {
     transform: translateY(0%);
+  }
+  .section_2 .body #textSection_2,
+  .section_2 .body .text {
+    text-align: center;
+    margin-top: 0rem;
+  }
+  .section_2 .body #textSection_2 br,
+  .section_2 .body .text br {
+    display: none;
+  }
+  .section_4 .logoImages .stripe_animations:nth-child(3),
+  .section_4 .logoImages .stripe_animations:nth-child(4) {
+    display: none;
+  }
+  .section_4 .logoImages .stripe_animations:nth-child(2) {
+    margin-top: 10.5%;
+  }
+  .section_4 .title .links {
+    font-size: 14px;
+    gap: 5px;
+  }
+  .section_4 .title .text {
+    font-size: 18px;
+    line-height: 1;
+    padding-left: 13.02083vw;
   }
 }
 /* ------------------- 552px ------------------- */
