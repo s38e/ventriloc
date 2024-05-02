@@ -344,7 +344,7 @@
 .section_4 h3 .spanSection_4 {
   display: block;
   /* background-color: red; */
-  line-height: 86px;
+  line-height: 1;
 }
 .section_4 h3 span span {
   color: #ff682c;
@@ -674,6 +674,7 @@
   font-weight: 400;
   color: rgb(237, 208, 198);
   font-family: "PolySans";
+  text-align: start;
 }
 .section_5 .faq .questions .question .answer {
   display: none;
@@ -999,7 +1000,7 @@
     font-size: 12px;
   }
   .section_4 h3 .spanSection_4 {
-    line-height: 66px;
+    line-height: 1;
   }
   .section_4 .title {
     grid-template-columns: repeat(1, 1fr);
@@ -1146,6 +1147,25 @@
   .section_6 .body .hr {
     width: calc(100% - 40px);
     margin: 0 20px;
+  }
+  .section_5 .faq {
+    gap: 2rem;
+  }
+  .section_5 .faq .left {
+    gap: 1rem;
+  }
+  .section_5 .faq .left h2 {
+    font-size: 26px;
+  }
+  .section_5 .faq .left p {
+    font-size: 16px;
+    max-width: 100%;
+  }
+  .section_5 .faq .questions .question .head p {
+    font-size: 16px;
+  }
+  .section_5 .faq .questions .question .answer {
+    font-size: 14.4px;
   }
 }
 /* ------------------- 552px ------------------- */
