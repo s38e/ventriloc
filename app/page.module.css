@@ -894,6 +894,7 @@
     width: 100%;
     /* padding-bottom: 150px ; */
     padding-bottom: 80px !important;
+    overflow: hidden;
   }
   .section_2 {
     height: auto;
@@ -947,6 +948,7 @@
   }
   .section_5 .swiper {
     display: flex;
+    padding: 0 4%;
   }
   .swiperPagination {
     position: absolute;
@@ -1189,6 +1191,15 @@
   .section_5 .faq .questions .question .answer {
     padding-left: 30px;
   }
+  .section_3 .head h2 {
+    margin-bottom: 100px;
+  }
+}
+/* ------------------- 600px ------------------- */
+@media (max-width: 600px) {
+  .section_4 .title .text {
+    padding-left: 0;
+  }
 }
 /* ------------------- 552px ------------------- */
 @media (max-width: 552px) {
@@ -1206,5 +1217,8 @@
   }
   .section_3 .head h2 svg {
     top: -46px;
+  }
+  .section_3 .head h2 {
+    margin-bottom: 70px;
   }
 }
