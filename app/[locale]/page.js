@@ -65,7 +65,7 @@ export default function Home() {
     );
     // ----------- Section 1 Animation ----------- //
     gsap.fromTo(
-      `.${styles.spanHeadSection_1}:nth-child(1)`,
+      `.${styles.section_1} .${styles.head} h1 .${styles.spanHeadSection_1}:nth-child(1)`,
       {
         y: "50%",
         opacity: 0,
@@ -78,7 +78,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.spanHeadSection_1}:nth-child(2)`,
+      `.${styles.section_1} .${styles.head} h1 .${styles.spanHeadSection_1}:nth-child(2)`,
       {
         y: "50%",
         opacity: 0,
@@ -91,7 +91,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.btn}`,
+      `.${styles.section_1} .${styles.head} .${styles.btn}`,
       {
         y: "80%",
         opacity: 0,
@@ -105,7 +105,7 @@ export default function Home() {
     );
     // ----------- Section 2 Animation ----------- //
     gsap.fromTo(
-      `#${styles.textSection_2}`,
+      `.${styles.section_2} .${styles.body} #${styles.textSection_2}`,
       {
         y: "50%",
         opacity: 0,
@@ -118,7 +118,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.video}`,
+      `.${styles.section_2} .${styles.body} .${styles.video}`,
       {
         y: 100,
         opacity: 0,
@@ -154,7 +154,7 @@ export default function Home() {
     );
     // ----------- Section 3 Animation ----------- //
     gsap.fromTo(
-      `.${styles.head} h2 span:nth-child(1)`,
+      `.${styles.section_3} .${styles.head} h2 span:nth-child(1)`,
       {
         x: "-100%",
         opacity: 0,
@@ -170,7 +170,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.head} h2 span:nth-child(2)`,
+      `.${styles.section_3} .${styles.head} h2 span:nth-child(2)`,
       {
         x: "100%",
         opacity: 0,
@@ -186,7 +186,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.head} h2 svg`,
+      `.${styles.section_3} .${styles.head} h2 svg`,
       {
         opacity: 0,
       },
@@ -200,7 +200,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.body} .${styles.card}:nth-child(1)`,
+      `.${styles.section_3} .${styles.body} .${styles.card}:nth-child(1)`,
       {
         y: 50,
         opacity: 0,
@@ -215,7 +215,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.body} .${styles.card}:nth-child(2)`,
+      `.${styles.section_3} .${styles.body} .${styles.card}:nth-child(2)`,
       {
         y: 50,
         opacity: 0,
@@ -231,7 +231,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.body} .${styles.card}:nth-child(3)`,
+      `.${styles.section_3} .${styles.body} .${styles.card}:nth-child(3)`,
       {
         y: 50,
         opacity: 0,
@@ -262,14 +262,14 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.partner} h2`,
+      `.${styles.section_3} .${styles.partner} h2`,
       {
         x: 150,
         opacity: 0,
       },
       {
         scrollTrigger: {
-          trigger: `.${styles.partner}`,
+          trigger: `.${styles.section_3} .${styles.partner}`,
         },
         x: 0,
         opacity: 1,
@@ -277,7 +277,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.partner} .${styles.marquee}:nth-child(2) .${styles.marquee__inner}`,
+      `.${styles.section_3} .${styles.partner} .${styles.marquee}:nth-child(2) .${styles.marquee__inner}`,
       {
         opacity: 0,
       },
@@ -290,7 +290,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.partner} .${styles.marquee}:nth-child(3) .${styles.marquee__inner}`,
+      `.${styles.section_3} .${styles.partner} .${styles.marquee}:nth-child(3) .${styles.marquee__inner}`,
       {
         opacity: 0,
       },
@@ -304,7 +304,7 @@ export default function Home() {
     );
     // ----------- Section 4 Animation ----------- //
     gsap.fromTo(
-      `.${styles.stripe_animations}:nth-child(1) svg path`,
+      `.${styles.section_4} .${styles.logoImages} .${styles.stripe_animations}:nth-child(1) svg path`,
       {
         y: "101%",
       },
@@ -317,7 +317,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.stripe_animations}:nth-child(2) svg path`,
+      `.${styles.section_4} .${styles.logoImages} .${styles.stripe_animations}:nth-child(2) svg path`,
       {
         y: "101%",
       },
@@ -331,7 +331,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.stripe_animations}:nth-child(3) svg path`,
+      `.${styles.section_4} .${styles.logoImages} .${styles.stripe_animations}:nth-child(3) svg path`,
       {
         y: "101%",
       },
@@ -345,7 +345,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.stripe_animations}:nth-child(4) svg path`,
+      `.${styles.section_4} .${styles.logoImages} .${styles.stripe_animations}:nth-child(4) svg path`,
       {
         y: "101%",
       },
@@ -359,7 +359,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.spanSection_4}:nth-child(1)`,
+      `.${styles.section_4} h3 .${styles.spanSection_4}:nth-child(1)`,
       {
         opacity: 0,
         x: 200,
@@ -375,7 +375,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.spanSection_4}:nth-child(2)`,
+      `.${styles.section_4} h3 .${styles.spanSection_4}:nth-child(2)`,
       {
         opacity: 0,
         x: -200,
@@ -424,7 +424,7 @@ export default function Home() {
     );
     // ----------- Section 5 Animation ----------- //
     gsap.fromTo(
-      `.${styles.faq} .${styles.left}`,
+      `.${styles.section_5} .${styles.faq} .${styles.left}`,
       {
         opacity: 0,
         y: 100,
@@ -440,7 +440,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.questions} .${styles.question}:nth-child(1)`,
+      `.${styles.section_5} .${styles.faq} .${styles.questions} .${styles.question}:nth-child(1)`,
       {
         opacity: 0,
         x: 100,
@@ -456,7 +456,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.questions} .${styles.question}:nth-child(2)`,
+      `.${styles.section_5} .${styles.faq} .${styles.questions} .${styles.question}:nth-child(2)`,
       {
         opacity: 0,
         x: 100,
@@ -472,7 +472,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.questions} .${styles.question}:nth-child(3)`,
+      `.${styles.section_5} .${styles.faq} .${styles.questions} .${styles.question}:nth-child(3)`,
       {
         opacity: 0,
         x: 100,
@@ -488,7 +488,7 @@ export default function Home() {
       }
     );
     gsap.fromTo(
-      `.${styles.questions} .${styles.question}:nth-child(4)`,
+      `.${styles.section_5} .${styles.faq} .${styles.questions} .${styles.question}:nth-child(4)`,
       {
         opacity: 0,
         x: 100,
@@ -564,7 +564,7 @@ export default function Home() {
     // ----------- Scale Video ----------- //
     if (!isMobile) {
       gsap.registerPlugin(ScrollTrigger);
-      gsap.to(`.${styles.vid}`, {
+      gsap.to(`.${styles.section_2} .${styles.body} .${styles.video} .${styles.vid}`, {
         width: "1000px",
         scrollTrigger: {
           trigger: `.${styles.section_2}`,
@@ -618,7 +618,7 @@ export default function Home() {
     });
     // ----------- Sticky Cards Section5 ----------- //
     gsap.fromTo(
-      `.${styles.cards}`,
+      `.${styles.section_5} .${styles.sticky} .${styles.cards}`,
       {
         x: "100%",
       },
@@ -636,7 +636,7 @@ export default function Home() {
     // ----------- Animation Card 1 Section5 ----------- //
     if (!isMobile) {
       gsap.fromTo(
-        `.${styles.cardSticky}:nth-child(1)`,
+        `.${styles.section_5} .${styles.sticky} .${styles.cards} .${styles.cardSticky}:nth-child(1)`,
         {
           rotate: "-13deg",
         },
@@ -655,7 +655,7 @@ export default function Home() {
     // ----------- Animation Card 2 Section5 ----------- //
     if (!isMobile) {
       gsap.fromTo(
-        `.${styles.cardSticky}:nth-child(2)`,
+        `.${styles.section_5} .${styles.sticky} .${styles.cards} .${styles.cardSticky}:nth-child(2)`,
         {
           rotate: "-7deg",
           x: "60%",
@@ -676,7 +676,7 @@ export default function Home() {
     // ----------- Animation Card 3 Section5 ----------- //
     if (!isMobile) {
       gsap.fromTo(
-        `.${styles.cardSticky}:nth-child(3)`,
+        `.${styles.section_5} .${styles.sticky} .${styles.cards} .${styles.cardSticky}:nth-child(3)`,
         {
           x: "120%",
           rotate: "-13deg",
@@ -697,7 +697,7 @@ export default function Home() {
     // ----------- Animation Card 4 Section5 ----------- //
     if (!isMobile) {
       gsap.fromTo(
-        `.${styles.cardSticky}:nth-child(4)`,
+        `.${styles.section_5} .${styles.sticky} .${styles.cards} .${styles.cardSticky}:nth-child(4)`,
         {
           rotate: "-7deg",
           x: "180%",
@@ -716,7 +716,7 @@ export default function Home() {
       );
     }
     // ----------- Animation fanSvg Section6 ----------- //
-    gsap.to(`.${styles.fanSvg}`, {
+    gsap.to(`.${styles.section_6} .${styles.fanSvg}`, {
       rotate: 360,
       scrollTrigger: {
         trigger: `.${styles.section_6}`,
