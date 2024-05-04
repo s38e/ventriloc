@@ -123,6 +123,7 @@
   justify-content: center;
   flex-direction: column;
   gap: 0.3rem;
+  font-size: 14px;
 }
 .footerMobile .hr {
   width: 100%;
@@ -142,11 +143,13 @@
   justify-content: center;
   flex-direction: column;
   gap: 0.3rem;
+  font-size: 14px;
 }
 .footerMobile .copyRights .linksCol p {
   text-wrap: nowrap;
   display: flex;
   /* line-height: 18px; */
+  font-size: 14px;
 }
 .footerMobile .copyRights .linksCol p a {
   margin-left: 5px;

@@ -727,7 +727,7 @@ export default function Home() {
         scrollTrigger: {
           trigger: `.${styles.section_6}`,
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
       });
     } else {
