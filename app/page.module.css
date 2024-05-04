@@ -753,6 +753,7 @@
   margin: 0 40px;
 }
 .section_6 .body .posts .post {
+  overflow: hidden;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 40px;
