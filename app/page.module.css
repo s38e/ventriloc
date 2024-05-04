@@ -232,7 +232,7 @@
   transition: 450ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .section_3 .body .card:hover {
-  transform: translateY(-20px);
+  transform: translateY(-20px) !important;
   background-color: #512520;
 }
 .section_3 .body .card img {
