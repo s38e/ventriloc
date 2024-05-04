@@ -792,6 +792,7 @@
   width: 100%;
   height: auto;
   border-radius: 20px;
+  aspect-ratio: 16 / 9;
 }
 .section_6 .body .posts .post .left .img img,
 .section_6 .body .posts .post .right .img img {
