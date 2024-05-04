@@ -608,7 +608,7 @@ export default function Home() {
       overwrite: "auto", // استخدام خاصية overwrite لتجنب التقطيع
     });
     // ----------- Scale BackGround Section4 ----------- //
-    gsap.to(`.${styles.BackGround}`, {
+    gsap.to(`.${styles.section_4} .${styles.BackGround}`, {
       width: "100%",
       duration: 10,
       scrollTrigger: {
@@ -620,22 +620,24 @@ export default function Home() {
       },
     });
     // ----------- Sticky Cards Section5 ----------- //
-    gsap.fromTo(
-      `.${styles.section_5} .${styles.sticky} .${styles.cards}`,
-      {
-        x: "100%",
-      },
-      {
-        x: 0,
-        scrollTrigger: {
-          trigger: `.${styles.sticky}`,
-          scrub: 1,
-          // markers: true,
-          start: "top 80%",
-          end: "bottom 80%",
+    if (!isMobile) {
+      gsap.fromTo(
+        `.${styles.section_5} .${styles.sticky} .${styles.cards}`,
+        {
+          x: "100%",
         },
-      }
-    );
+        {
+          x: 0,
+          scrollTrigger: {
+            trigger: `.${styles.sticky}`,
+            scrub: 1,
+            // markers: true,
+            start: "top 80%",
+            end: "bottom 80%",
+          },
+        }
+      );
+    }
     // ----------- Animation Card 1 Section5 ----------- //
     if (!isMobile) {
       gsap.fromTo(
