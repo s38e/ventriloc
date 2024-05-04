@@ -721,14 +721,18 @@ export default function Home() {
       );
     }
     // ----------- Animation fanSvg Section6 ----------- //
-    gsap.to(`.${styles.section_6} .${styles.fanSvg}`, {
-      rotate: 360,
-      scrollTrigger: {
-        trigger: `.${styles.section_6}`,
-        scrub: 1,
-        // markers: true,
-      },
-    });
+    if (window.innerWidth >= 1024) {
+      gsap.to(`.${styles.section_6} .${styles.fanSvg}`, {
+        rotate: 360,
+        scrollTrigger: {
+          trigger: `.${styles.section_6}`,
+          scrub: 1,
+          markers: true,
+        },
+      });
+    } else {
+      null;
+    }
     // ------------------- Height Section 8 ------------------- //
     // var menuServices = document.querySelector(`.${stylesFooter.page}`);
     // var backSection = document.querySelector(`.${styles.section_8}`);
