@@ -829,6 +829,10 @@
   line-height: 60px;
   font-weight: 300;
 }
+.section_7 .container button:nth-child(3),
+.section_7 .container h3:nth-child(2) {
+  display: none;
+}
 .section_7 .container h3 span {
   color: #ff682c;
   font-family: "Ivar Display";
@@ -867,6 +871,21 @@
 .section_7 .container button:hover::before {
   border-radius: 0;
   top: 0;
+}
+/* ------------------- footerSection ------------------- */
+.footerSection {
+  background-color: #512520;
+  width: 100%;
+  color: #ff682c;
+  display: none;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 3%;
+  gap: 2rem;
+}
+.footerSection svg {
+  height: auto;
+  width: 100%;
 }
 /* ------------------- Responsive Design ------------------- */
 /* ------------------- 1200px ------------------- */
@@ -1067,6 +1086,9 @@
     padding: 5px 15px;
     font-size: 16px;
   }
+  .section_7 .container h3 button {
+    display: inline !important;
+  }
   .section_3 .head h2 {
     margin-top: 2rem;
   }
@@ -1109,8 +1131,20 @@
   .section_1 .head h1 .spanHeadSection_1:nth-child(2) {
     margin-left: 2.5vw;
   }
+  .section_7 .container h3:nth-child(1) {
+    display: none;
+  }
+  .section_7 .container button:nth-child(3),
+  .section_7 .container h3:nth-child(2) {
+    display: block;
+  }
   .section_7 .container button {
-    transform: translateY(0%);
+    transform: translateY(0);
+    margin-bottom: 0;
+  }
+  .section_7 .container {
+    flex-direction: column;
+    gap: 1.5rem;
   }
   .section_2 .body #textSection_2,
   .section_2 .body .text {
@@ -1195,6 +1229,9 @@
   }
   .section_3 .head h2 {
     margin-bottom: 100px;
+  }
+  .footerSection {
+    display: flex;
   }
 }
 /* ------------------- 600px ------------------- */

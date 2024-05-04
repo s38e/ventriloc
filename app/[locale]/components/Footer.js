@@ -106,6 +106,44 @@ function Footer() {
           fill="currentColor"
         ></path>
       </svg>
+      <div className={styles.footerMobile}>
+        <div className={styles.links}>
+          <div className={styles.linksCol}>
+            <Link href="">Data integration</Link>
+            <Link href="">Data visualization</Link>
+            <Link href="">Analytical alignment</Link>
+          </div>
+          <div className={styles.linksCol}>
+            <Link href="">About</Link>
+            <Link href="">Careers</Link>
+            <Link href="">Team</Link>
+            <Link href="">Clients</Link>
+            <Link href="">Contact</Link>
+            <Link href="">Blog</Link>
+            <Link href="">Privacy Policy</Link>
+          </div>
+        </div>
+        <div className={styles.hr}></div>
+        <div className={styles.copyRights}>
+          <div className={styles.left}>
+            <div className={styles.linksCol}>
+              <p>© ventriloc 2024</p>
+            </div>
+            <div className={styles.linksCol}>
+              <Link href="">Cookies preferences</Link>
+            </div>
+          </div>
+          <div className={styles.linksCol}>
+            <p>
+              Developed by
+              <Link href="https://facebook.com/S3eedKh3led/">
+                <span>Saeed Khaled</span>
+                <span>Saeed Khaled</span>
+              </Link>
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 }
